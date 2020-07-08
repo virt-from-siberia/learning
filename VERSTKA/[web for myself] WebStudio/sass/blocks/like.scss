@@ -1,0 +1,27 @@
+.likes__btn {
+    background: none;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    padding: 0;
+
+    svg {
+        width: 24px;
+        height: 22px;
+        transition: 0.5s;
+
+        &:hover {
+            fill: $red;
+        }
+    }
+}
+
+
+.likes__count {
+    font-size: 11px;
+    color: $red;
+    text-transform: uppercase;
+    line-height: 1.1;
+    display: block;
+    margin: 5px 0 0 0;
+}

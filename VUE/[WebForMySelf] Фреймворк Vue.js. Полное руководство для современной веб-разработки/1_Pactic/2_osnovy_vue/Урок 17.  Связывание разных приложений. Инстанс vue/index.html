@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue JS</title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <h2>{{title}}</h2>
+        <button v-on:click="title = 'Updated title'"> Updated title</button>
+
+    </div>
+    <hr>
+    <div id="app2">
+        <h2>{{title}}</h2>
+        <button v-on:click="updateFirstTitle">updateFirstTitle</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script>
+
+        let vue1 = new Vue({
+            el: '#app',
+            data: {
+                title: 'hellow I am Vue! '
+            },
+            methods: {
+                alertFast() {
+                    alert('i am from vue 1');
+                }
+            },
+        });
+
+
+        new Vue({
+            el: '#app2',
+            data: {
+                title: 'hellow I am Vue 2! '
+            },
+            methods: {
+                updateFirstTitle() {
+                    vue1.title = 'Updated from second upp';
+                    setTimeout(() => {
+                        vue1.alertFast()
+                    }, 1000);
+                }
+            },
+        });
+
+    </script>
+</body>
+
+</html>

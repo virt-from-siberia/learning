@@ -1,0 +1,9 @@
+.size(@n) {
+    width: calc(100% / 12 * @n - 30px);
+}
+
+.size-from(@px, @n) {
+    @media screen and (max-width:@px) {
+        .size(@n);
+    }
+}

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" href="css//bootstrap.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/vue.js"></script>
+    <style>
+        .my-info{
+            font-style: italic;
+        }
+
+        .my-warning{
+            font-size: 20px;
+        }
+
+        .table-some{
+            color: #fff;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+<div class="sample">
+    <div class="alert" :class="divClassName">
+        Some text
+    </div>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input class="form-check-input" 
+                   type="radio" 
+                   value="info"
+                   v-model="divClass"> 
+            Info
+        </label>
+    </div>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input class="form-check-input" 
+                   type="radio" 
+                   value="warning"
+                   v-model="divClass"> 
+            Warning
+        </label>
+    </div>
+    <hr>
+    <div class="form-check" v-for="(value, name) in flags">
+        <label class="form-check-label">
+            <input class="form-check-input" 
+                   type="checkbox" 
+                   v-model="flags[name]"
+                   > 
+            {{ name }}
+        </label>
+    </div>
+    <hr>
+    <table class="table" :class="flags">
+         <tr>
+             <td>Title</td>
+             <td>Some</td>
+             <td>nz</td>
+         </tr>
+         <tr>
+             <td>Title</td>
+             <td>Some</td>
+             <td>nz</td>
+         </tr>
+         <tr>
+             <td>Title</td>
+             <td>Some</td>
+             <td>nz</td>
+         </tr>
+     </table> 
+</div>
+</div>
+<script>
+    /* 
+        :class="string"
+        :class="array"
+        :class="obj"
+        :class="[str, obj]"
+        :class="['alert', 'some', {a: true, b: false}]"
+    */
+
+
+    new Vue({
+        el: '.sample',
+        data: {
+            divClass: 'info',
+            flags: {
+                'table-bordered': false,
+                'table-hover': false,
+                'table-some': false
+            }
+        },
+        computed: {
+            divClassName(){
+                return [
+                    'alert-' + this.divClass,
+                    'my-' + this.divClass
+                ];
+            }
+        }
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+.header {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+
+    @media(max-width: 550px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+}
+
+.container {
+    background: $primary;
+}
+
+.header__left {
+    grid-column: span 11;
+    padding-left: 15.9%;
+    padding-top: 4.8%;
+    padding-bottom: 8.7%;
+    background: url('/img/image1.png') 100% center no-repeat;
+    background-size: 100%;
+
+    @media(min-resolution: 2dppx),
+    (min-width: 1500px) {
+        background-image: url('/img/image1-2x.png');
+    }
+
+    @media(max-width: 980px) {
+        grid-column: span 9;
+    }
+
+    @media(max-width: 550px) {
+        grid-column: span 1;
+        grid-row: 2/3;
+    }
+}
+
+.header__right {
+    grid-column: span 5;
+
+    // &::before {
+    //     position: absolute;
+    //     bottom: -100px;
+    //     left: -400px;
+    //     content: url('../img/desing2.png');
+    //     transform: scale(0.6);
+    //     opacity: 0.1;
+    // }
+
+    @media(max-width: 980px) {
+        grid-column: span 7;
+    }
+
+    @media(max-width: 550px) {
+        grid-column: span 1;
+    }
+
+
+}
+
+.header__logo {
+    display: block;
+    max-width: 100%;
+}
+
+.header__slogon {
+    font-size: 18px;
+    color: $colorText;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-top: 5px;
+}
+
+.header__social {
+    margin-top: 60px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+
+.header__right {
+    background-color: $second;
+    position: relative;
+    padding-top: 10.7%;
+
+    @media(max-width: 550px) {
+        grid-row: 1/2;
+    }
+}
+
+
+.header__addres {
+    font-size: 18px;
+    color: $white;
+    text-transform: uppercase;
+    line-height: 1.1;
+    position: absolute;
+    left: 12.8%;
+    bottom: 36.5%;
+
+    @media(max-width: 550px) {
+        position: static;
+        margin-left: 10%;
+        margin-top: 10%;
+        font-size: 16px;
+    }
+}
+
+.header__contacts {
+    font-size: 22px;
+    text-transform: uppercase;
+    line-height: 1.077;
+    position: absolute;
+    left: 28%;
+    bottom: 21%;
+
+    @media(max-width: 550px) {
+        position: static;
+        margin-left: 30%;
+        margin-top: 20%;
+        margin-bottom: 20%;
+        font-size: 20px;
+    }
+}
+
+.header__tel,
+.header__mail {
+    color: $white;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.5s all;
+    cursor: pointer;
+
+    &:hover,
+    :active {
+        color: $colorTextHover;
+    }
+}

@@ -1,0 +1,4 @@
+
+
+sum;
+alert(sum);

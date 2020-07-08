@@ -1,0 +1,15 @@
+.info{
+    display: flex;
+    justify-content: space-around;
+}
+.info-content{
+    background: yellow;
+}
+
+.del{
+    display: none;
+}
+.ok{
+    display: block;
+    color: #65bdae;
+}

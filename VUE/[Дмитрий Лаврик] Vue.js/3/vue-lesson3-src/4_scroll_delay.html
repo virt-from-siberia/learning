@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>1</title>
+	<link rel="stylesheet" href="css//bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link href="css/styles.css" rel="stylesheet">
+	<style>
+		.content {
+			height: 300px;
+			overflow: auto;
+		}
+	</style>
+	<script src="js/vue.js"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="sample">
+			<form @submit.prevent="formSubmited = true" v-if="!formSubmited">
+				<div class="content alert alert-info" v-ondelay:scroll.100="onScroll">
+					<p>This text no one reads. This text no one reads. This text no one reads.</p>
+					<p>This text no one reads. This text no one reads. This text no one reads.</p>
+					<p>This text no one reads. This text no one reads. This text no one reads.</p>
+					<p>This text no one reads. This text no one reads. This text no one reads.</p>
+					<p>This text no one reads. This text no one reads. This text no one reads.</p>
+					<p>This text no one reads. This text no one reads. This text no one reads.</p>
+					<p>This text no one reads. This text no one reads. This text no one reads.</p>
+					<p>This text no one reads. This text no one reads. This text no one reads.</p>
+					<p>This text no one reads. This text no one reads. This text no one reads.</p>
+					<p>This text no one reads. This text no one reads. This text no one reads.</p>
+				</div>
+				<template v-if="scrolled">
+					<div class="form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" type="checkbox" v-model="flags.agree">
+							Согласен
+						</label>
+					</div>
+					<div class="form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" type="checkbox" v-model="flags.spam">
+							Хочу получать спам
+						</label>
+					</div>
+					<div class="form-check" v-show="flags.spam">
+						<label class="form-check-label">
+							<input class="form-check-input" type="radio" value="phone" v-model="spam">
+							Phone
+						</label>
+					</div>
+					<div class="form-check" v-show="flags.spam">
+						<label class="form-check-label">
+							<input class="form-check-input" type="radio" value="email" v-model="spam">
+							Email
+						</label>
+					</div>
+					<hr>
+					<button class="btn btn-primary" v-show="flags.agree">
+						Send Data
+					</button>
+				</template>
+			</form>
+			<div v-else>
+				<table class="table table-bordered">
+					<tr>
+						<td>Agree Text</td>
+						<td>{{ flags.agree ? 'Yes' : 'No' }}</td>
+					</tr>
+					<tr>
+						<td>Get Spam</td>
+						<td>{{ flags.spam ? 'Yes' : 'No' }}</td>
+					</tr>
+					<tr v-if="flags.spam">
+						<td>Spam On</td>
+						<td>{{ spam }}</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<script>
+		Vue.directive('ondelay', {
+			bind(el, options) {
+				let timer;
+				let timeout = 0;
+
+				for (let name in options.modifiers) {
+					if (!isNaN(+name)) {
+						timeout = parseInt(name);
+					}
+				}
+
+				let callback = (e) => {
+					if (timer !== undefined) {
+						clearInterval(timer);
+					}
+
+					if (options.modifiers.prevent) {
+						e.preventDefault();
+					}
+
+					timer = setTimeout(() => {
+						options.value.call(this, e);
+					}, timeout);
+				};
+
+				el.addEventListener(options.arg, callback);
+			}
+		});
+
+		new Vue({
+			el: '.sample',
+			data: {
+				formSubmited: false,
+				scrolled: false,
+				flags: {
+					agree: false,
+					spam: false
+				},
+				spam: 'phone'
+			},
+			methods: {
+				onScroll(e) {
+					if (e.target.scrollHeight - e.target.clientHeight - e.target.scrollTop < 10) {
+						this.scrolled = true;
+					}
+				}
+			}
+		});
+
+	</script>
+</body>
+
+</html>

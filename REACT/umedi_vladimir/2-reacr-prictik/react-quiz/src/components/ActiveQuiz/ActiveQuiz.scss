@@ -1,0 +1,35 @@
+.activeQuiz {
+  padding: 20px;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  margin: 0 10px;
+  box-sizing: border-box;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+
+  small {
+    &:before {
+      content: "";
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background: yellow;
+      position: relative;
+      left: -20px;
+      bottom: -15px;
+      transition: 0.3s;
+    }
+
+    &:hover {
+      cursor: pointer;
+      &:before {
+        background: rgb(1, 173, 1);
+      }
+    }
+  }
+}

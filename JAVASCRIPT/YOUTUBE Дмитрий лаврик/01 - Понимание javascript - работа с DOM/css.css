@@ -1,0 +1,33 @@
+html, body, ul, li{
+    margin: 0;
+    padding: 0;
+}
+
+.buttonsItem{
+    width: 860px;   
+    margin: 0 auto;
+}
+
+#gallery{
+   width: 860px;   
+   margin: 0 auto;
+   text-align: center;
+   
+}
+
+#gallery .photos{
+    position: relative;
+    height: 1740px;
+}
+
+#gallery .photos img{
+    width: 100%;  
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#gallery .photos img.showed{
+    opacity: 1;
+}

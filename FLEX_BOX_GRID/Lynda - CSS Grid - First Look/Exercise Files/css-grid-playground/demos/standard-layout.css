@@ -1,0 +1,363 @@
+/**
+ * The primary stylesheet for the Standard Layout.
+ * This sheet pulls in surrounding components allowing you to focus on specifics.
+ */
+
+/* Components */
+@import url('../CSS/reset.css');
+@import url('../CSS/accessibility.css');
+@import url('../CSS/typography.css');
+
+/* Header */
+.masthead {
+    display: flex;
+    justify-content: left;
+    background: #000;
+}
+
+.site-branding {
+    display: flex;
+    align-items: center;
+}
+
+.site-title {
+    margin: 0 .35em;
+}
+
+.site-description {
+    margin: 0;
+    font-size: .9em;
+    font-style: italic;
+    text-transform: lowercase;
+    font-weight: 100;
+}
+
+/* Site Content */
+.site-content {
+    color: #000;
+}
+
+/* *******************************************************
+ * Main Grid using Template Areas
+ * *******************************************************/
+
+.site-content {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "promo"
+        "main"
+        "footer";
+}
+
+.main-area {
+    grid-area: main;
+}
+
+.footer-area {
+    grid-area: footer;
+}
+
+.promo-area {
+    grid-area: promo;
+}
+
+@media screen and (min-width: 1000px) {
+    .site-content {
+        grid-template-columns: 1fr 300px;
+        grid-template-rows: 250px auto;
+        grid-template-areas:
+            "main promo"
+            "main footer"
+    }
+
+}
+
+/* Main Area */
+.main-area {
+    border-top: 1px solid #ccc;
+    padding: 1em;
+}
+
+.article-title {
+    font-size: 1.6em;
+    line-height: 1.2em;
+}
+
+.intro {
+    box-sizing: content-box;
+    margin: 0 -1em;
+    padding: 1em 2em;
+    background: #EFEFEF;
+}
+
+.intro p {
+    font-style: italic;
+}
+
+.main-area p {
+    font-size: .9em;
+    line-height: 1.3em;
+}
+
+@media screen and (min-width: 500px) {
+
+    .main-area {
+        margin: 2em;
+    }
+
+    .article-title {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .intro p {
+        max-width: 550px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .main-area {
+        margin: 0 2em;
+        border-top: none;
+    }
+}
+
+/* Breakdown */
+.stepimage {
+    margin: 0;
+}
+
+.stepimage figcaption {
+    display: none;
+}
+
+.step {
+    padding-bottom: 2em;
+    border-bottom: 1px solid #ededed;
+}
+
+
+.step-title {
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 700px) {
+
+    /* *******************************************************
+     * Content Grid using numbered lines                                     
+     * *******************************************************/
+    .breakdown {
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+        grid-template-rows: auto;
+    }
+
+    .intro {
+        grid-column: 1/5;
+        grid-row: 1/2;
+    }
+
+    .stepimage figcaption {
+        display: block;
+        margin: 0 1em;
+        background-color: #ececec;
+    }
+
+    .item-desc {
+        padding: .5em 1em;
+    }
+
+    .stepimage p {
+        font-size: .8em;
+    }
+
+    .step {
+        padding: 1em 2em;
+        border-top: 1px solid #ededed;
+        border-bottom: none
+    }
+
+    .step01-image {
+        grid-column: 1/3;
+        grid-row: 2/4;
+    }
+
+    .step02-image {
+        grid-column: 1/3;
+        grid-row: 4/6;
+    }
+
+    .step03-image {
+        grid-column: 3/4;
+        grid-row: 2/3;
+    }
+
+    .step04-image {
+        grid-column: 4/5;
+        grid-row: 2/3;
+    }
+
+    .step05-image {
+        grid-column: 3/4;
+        grid-row: 3/6;
+    }
+
+    .step06-image {
+        grid-column: 4/5;
+        grid-row: 3/6;
+    }
+
+    .step01-body {
+        grid-column: 1/3;
+        grid-row: 6/7;
+        border-right: 1px solid #ededed;
+    }
+
+    .step02-body {
+        grid-column: 3/5;
+        grid-row: 6/7;
+    }
+
+    .step03-body {
+        grid-column: 1/3;
+        grid-row: 7/8;
+        border-right: 1px solid #ededed;
+    }
+
+    .step04-body {
+        grid-column: 3/5;
+        grid-row: 7/8;
+    }
+
+    .step05-body {
+        grid-column: 1/3;
+        grid-row: 8/9;
+        border-right: 1px solid #ededed;
+    }
+
+    .step06-body {
+        grid-column: 3/5;
+        grid-row: 8/9;
+    }
+}
+
+/* Footer Area */
+.footer-area {
+    margin: 1em;
+}
+
+@media screen and (min-width: 700px) {
+    .footer-area {
+        margin: 0;
+        padding: 2em;
+        background: #ededed;
+    }
+}
+
+/* Promo Area */
+.promo-area {
+    margin: 0 auto;
+    width: 320px;
+}
+
+.promo-area a {
+    display: block;
+    text-decoration: none;
+}
+
+.promo-banner {
+    position: relative;
+    width: 300px;
+    margin: 0.555555em;
+}
+
+.promo-banner figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    height: 250px;
+    box-sizing: border-box;
+    padding: 1em;
+    color: #fff;
+    text-shadow: 1px 1px 3px hsla(0, 0%, 0%, .5);
+}
+
+.promo-banner blockquote {
+    box-sizing: content-box;
+    margin: 0 -1em;
+    padding: 1em;
+    background-color: hsla(0, 0%, 100%, .3);
+}
+
+.promo-banner h3 {
+    margin: 0;
+    font-weight: 900;
+    font-size: 2em;
+}
+
+.promo-banner p {
+    margin: 0;
+}
+
+@media screen and (min-width: 620px) and (max-width: 1000px) {
+
+    .promo-area {
+        width: 100%;
+    }
+
+    .promo-banner {
+        display: flex;
+        justify-content: center;
+        margin: 2em auto;
+        width: 620px;
+    }
+
+    .promo-banner img {
+        width: 50%;
+    }
+
+    .promo-banner figcaption {
+        position: relative;
+        display: block;
+        width: 50%;
+        padding: 1em 0 1em 2em;
+        background-color: #333;
+    }
+
+    .promo-banner blockquote {
+        background: hsla(0, 0%, 0%, .7);
+        margin: 0 0 0 -4em;
+        padding-left: 4em;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .promo-area {
+        margin: 0;
+        width: 300px;
+    }
+
+    .promo-banner {
+        margin: 0;
+    }
+}
+
+/* Site Footer */
+.site-footer {
+    margin-top: 4em;
+    padding: 2em;
+    color: #fff;
+    text-align: center;
+    background-color: #000;
+}
+
+@media screen and (min-width: 700px) {
+    .site-footer {
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue JS</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <my-counter v-for="c in 2"></my-counter>
+    </div>
+
+    <hr>
+
+    <div id="app2">
+        <my-counter></my-counter>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script>
+
+
+        var conponent = {
+            template: `
+                        <div class="" style="border: 1px solid green; padding:10px">
+                        <h2>counter : {{counter}}</h2>
+                        <button v-on:click="counter++">counter ++ </button>
+                        <input type="text" v-model="counter">
+                        </div>
+                    `,
+            data() {
+                return {
+                    counter: 0
+                }
+            },
+            methods: {
+
+            }
+        }
+
+
+        new Vue({
+            el: '#app',
+            components: {
+                'my-counter': conponent
+            }
+        });
+        new Vue({
+            el: '#app2',
+            components: {
+                'my-counter': conponent
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

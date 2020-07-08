@@ -1,0 +1,35 @@
+.navigation-list {
+    display: flex;
+    font-size: 11px;
+    color: #b9bed1;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+}
+
+.navigation-list-item {
+    margin-right: 30px;
+    text-decoration: none;
+    color: #b9bed1;
+    transition: color 0.5s;
+
+
+    &:hover {
+        color: @dark-blue;
+        font-weight: bold;
+    }
+
+    &::last-child {
+        margin-right: 0;
+    }
+
+}
+
+.nav-link {
+    margin-right: 30px;
+    text-decoration: none;
+    color: @dark-blue;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}

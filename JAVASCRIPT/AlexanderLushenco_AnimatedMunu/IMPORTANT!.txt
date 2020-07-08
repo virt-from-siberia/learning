@@ -1,0 +1,8 @@
+В STYLE.CSS ИСПРАВИТЬ 
+#menu .c-hamburger-line span::before{
+    transition-property: top, transform;
+}
+#menu .c-hamburger-line span::after{
+    transition-property: bottom, transform;
+}
+ТК АВТОАПЕФИКСЕР НЕ РАСПОЗНАЕТ 

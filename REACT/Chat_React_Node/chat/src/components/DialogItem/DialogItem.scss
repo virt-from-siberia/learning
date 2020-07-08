@@ -1,0 +1,183 @@
+@import "~styles/variables";
+
+.dialogs {
+    width: 320px;
+
+    &__search {
+        padding: 0 20px 20px 20px;
+        margin: 0 auto;
+
+        span {
+            background: #f7f8f9;
+            border: none;
+
+            .ant-input {
+                background: #f7f8f9;
+                border: none;
+                height: 38px;
+                padding: 4px 11px 6px;
+
+                &-suffix {
+                    line-height: 38px;
+                }
+            }
+        }
+    }
+
+    &__no-found {
+        text-align: center;
+        opacity: 0.5;
+    }
+
+    &__item {
+        $item: &;
+        display: flex;
+        padding: 10px;
+        margin-bottom: 0;
+        cursor: pointer;
+        border-top: 1px solid #f7f7f7;
+
+        &:last-child {
+            border-bottom: 1px solid #f7f7f7;
+        }
+
+        &--selected {
+            background-color: $dialogsHover;
+            color: $white;
+            .dialogs__item-info {
+                .dialogs__item-info-top {
+                    b {
+                        color: $white;
+                    }
+                    span {
+                        color: $white;
+                    }
+                }
+                .dialogs__item-info-bottom {
+                    color: $white;
+                }
+            }
+        }
+
+        &.active {
+            padding: 15px 10px;
+        }
+
+        &.active,
+        &:hover {
+            background-color: $dialogsHover;
+
+            .dialogs__item-info {
+                .dialogs__item-info-top {
+                    b {
+                        color: $white;
+                    }
+                    span {
+                        color: $white;
+                    }
+                }
+                .dialogs__item-info-bottom {
+                    color: $white;
+                }
+            }
+        }
+
+        &-avatar {
+            position: relative;
+            flex: 0 0 40px;
+            margin-right: 10px;
+            width: 40px;
+            height: 40px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+            }
+        }
+
+        &--online {
+            #{$item}-avatar {
+                &::before {
+                    position: absolute;
+                    bottom: -2px;
+                    right: 0;
+                    display: block;
+                    content: "";
+                    background-color: $green;
+                    border-radius: 30px;
+                    width: 13px;
+                    height: 13px;
+                    border: 3px solid $black;
+                }
+            }
+        }
+
+        &-info {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1;
+            color: $black;
+
+            &-top {
+                display: flex;
+
+                b {
+                    font-weight: 800;
+                    font-size: 14px;
+                    flex: 1;
+                    margin-bottom: 6px;
+                }
+
+                span {
+                    opacity: 0.5;
+                    color: rgb(71, 114, 85);
+                    font-size: 12px;
+                }
+            }
+
+            &-bottom {
+                position: relative;
+
+                p {
+                    opacity: 0.5;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    width: 220px;
+                    height: 1.2em;
+                    white-space: nowrap;
+                }
+
+                &-count {
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    background: #f46b6b;
+                    color: #fff;
+                    font-weight: bold;
+                    min-width: 25px;
+                    -width: 18px;
+                    height: 18px;
+                    border-radius: 30px;
+                    font-size: 11px;
+                    text-align: center;
+                    line-height: 17px;
+                    // box-shadow: 0 0 0 1px #fff;
+                }
+
+                .message__icon-readed--no {
+                    bottom: 0;
+                    left: auto !important;
+                    right: 0;
+                }
+                .message__icon-readed {
+                    bottom: 0;
+                    left: auto !important;
+                    right: 0;
+                }
+            }
+        }
+    }
+}

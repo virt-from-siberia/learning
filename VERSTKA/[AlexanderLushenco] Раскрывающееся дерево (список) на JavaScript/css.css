@@ -1,0 +1,36 @@
+.tree span:hover {
+    font-weight: bold;
+}
+
+.tree span {
+    cursor: pointer;
+}
+
+
+li {
+    list-style: none;
+}
+
+.hide::before {
+    background-image: url('img/plus.png');
+    background-size: 15px 15px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    content: "";
+    margin-right: 10px;
+
+    /* content: url('img/plus.png');
+    transform: scale(.1); */
+
+}
+
+.show::before {
+    background-image: url('img/minus.png');
+    background-size: 15px 15px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    content: "";
+    margin-right: 10px;
+}

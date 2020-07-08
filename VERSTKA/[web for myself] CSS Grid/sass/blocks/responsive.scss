@@ -1,0 +1,86 @@
+$lineColor: #2f2f2f;
+$colorText: #464646;
+$greenColor: #8dc63f;
+
+.responsive__wrap {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: url('../img/bg-two.png')left bottom no-repeat;
+}
+
+.responsive__information {
+    width: 360px;
+    margin-left: auto;
+}
+
+.responsive__title {
+    font-size: 30px;
+    color: $white;
+    font-family: 'Raleway';
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin: 20px 0;
+    position: relative;
+
+    &::before {
+        width: 70px;
+        height: 2px;
+        background-color: $lineColor;
+        position: absolute;
+        left: 0;
+        top: -20px;
+        content: '';
+    }
+}
+
+.responsive__title span {
+    color: $second;
+}
+
+.responsive__text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: $colorText;
+    margin: 20px 0;
+}
+
+.responsive__list {
+    margin: 20px 0;
+}
+
+
+.responsive__button {
+    @include button($greenColor);
+    margin-top: 50px;
+}
+
+@media(max-width: 768px) {
+
+    .responsive__title {
+        text-align: center;
+    }
+
+    .responsive__wrap {
+        background-image: none;
+    }
+
+    .responsive__information {
+        margin-left: 0;
+        max-width: 100%;
+    }
+}
+
+
+@media(max-width: 480px) {
+    .responsive__wrap {
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+    }
+
+    .responsive__button {
+        display: block;
+        margin: 0 auto;
+    }
+}

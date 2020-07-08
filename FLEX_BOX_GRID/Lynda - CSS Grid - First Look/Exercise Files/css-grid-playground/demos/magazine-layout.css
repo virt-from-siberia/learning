@@ -1,0 +1,270 @@
+/**
+ * The primary stylesheet for the Standard Layout.
+ * This sheet pulls in surrounding components allowing you to focus on specifics.
+ */
+
+/* Components */
+@import url('../CSS/reset.css');
+@import url('../CSS/accessibility.css');
+@import url('../CSS/typography.css');
+
+body {
+    font-family: 'Alegreya', serif;
+    color: #000;
+    margin: 1em;
+}
+
+figure {
+    margin: 0;
+}
+
+.featured-image {
+    margin: -1em -1em 0 -1em;
+    max-height: 80vw;
+    overflow: hidden;
+}
+
+.featured-image img {
+    margin-top: -25vw;
+}
+
+.main-title {
+    margin: .7em 0 .5em;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2.2em;
+    text-align: center;
+}
+
+.main-title::after {
+    display: block;
+    width: 10%;
+    margin: .5em auto .8em;
+    content: "";
+    border-bottom: 1px solid #333;
+}
+
+.main-story {
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+.sub-story-title {
+    margin-bottom: .2em;
+    font-size: 1.8em;
+    font-style: italic;
+}
+
+.byline {
+    display: block;
+    margin: 0 0 1.5em;
+    padding-top: .5em;
+    color: #333;
+    font-style: italic;
+    border-top: 1px solid #cdcdcd;
+}
+
+.story::after {
+    display: block;
+    font-family: 'Alegreya', serif;
+    font-size: 1.6rem;
+    content: "— § —";
+    text-align: center;
+    color: #545454;
+}
+
+@media screen and (min-width: 600px) {
+
+    .story {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .story::after {
+        margin: 2em auto;
+    }
+
+    .featured-image {
+        margin: 0;
+        max-height: 40vw;
+        overflow: hidden;
+    }
+
+    .featured-image img {
+        margin-top: -25vw;
+    }
+
+    .story-image {
+        float: right;
+        width: 50%;
+        margin: 0 0 1em 1em;
+    }
+}
+
+/* *******************************************************
+ * Main Grid
+ * *******************************************************/
+
+@media screen and (min-width: 800px) {
+
+    .main-area {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+    }
+
+    .one {
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+
+    .two {
+        grid-column: 1/3;
+        grid-row: 2/3;
+    }
+
+    .three {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+
+    .four {
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+
+    .five {
+        grid-column: 1/3;
+        grid-row: 4/5;
+    }
+
+    .three,
+    .four {
+        padding: 1em 2em;
+    }
+
+    .featured-image {
+        margin: 0;
+        max-height: 40vw;
+        overflow: hidden;
+    }
+
+    .featured-image img {
+        margin-top: -15vw;
+    }
+}
+
+@media screen and (min-width: 1050px) {
+
+    .main-area {
+        grid-template-columns: calc(600px + 2em) 1fr;
+        grid-template-rows: auto;
+    }
+
+    .one {
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+
+    .two {
+        grid-column: 1/3;
+        grid-row: 2/3;
+    }
+
+    .three {
+        grid-column: 3/4;
+        grid-row: 1/3;
+    }
+
+    .four {
+        grid-column: 3/4;
+        grid-row: 3/4;
+    }
+
+    .five {
+        grid-column: 1/3;
+        grid-row: 3/4;
+    }
+
+    .three,
+    .four {
+        padding: 1em 2em;
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+
+    .main-area {
+        grid-template-columns: [first] 1fr [main] 1fr [split] 1fr [second] 2fr [end];
+        grid-template-rows: auto;
+    }
+
+    .one {
+        grid-column: main / second;
+        grid-row: 1/2;
+    }
+
+    .two {
+        grid-column: first / main;
+        grid-row: 1/2;
+    }
+
+    .three {
+        grid-column: second / third;
+        grid-row: 1/2;
+    }
+
+    .four {
+        grid-column: split / end;
+        grid-row: 2/3;
+    }
+
+    .five {
+        grid-column: first / split;
+        grid-row: 2/3;
+    }
+
+    .story {
+        padding: 1em;
+    }
+
+    .three,
+    .four {
+        padding: 1em;
+    }
+
+    .featured-image {
+        margin: 0;
+        max-height: 100%;
+        overflow: visible;
+    }
+
+    .featured-image img {
+        margin-top: 0;
+    }
+
+    .story-image {
+        float: none;
+        width: 100%;
+        margin: 1em 0;
+    }
+
+    .one,
+    .two {
+        font-size: 85%;
+    }
+    
+    .three .sub-story {
+        -webkit-columns: 2;
+        -moz-columns: 2;
+        columns: 2;
+        -webkit-column-gap: 2em;
+        -moz-column-gap: 2em;
+        column-gap: 2em;
+    }
+
+    .two .sub-story > p,
+    .three .sub-story p,
+    .sub-story-title {
+        margin-top: 0;
+    }
+}

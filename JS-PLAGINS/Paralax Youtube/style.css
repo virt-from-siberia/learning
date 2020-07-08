@@ -1,0 +1,49 @@
+body
+{
+	margin: 0;
+	padding: 0;
+}
+.container
+{
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	background: url(img/background.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+}
+.mixBlnd
+{
+	background-blend-mode: screen;
+}
+
+.containerBottom{
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	background: url(img/background.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	
+}
+.edit{
+	/* position: absolute; */
+	/* right: 0; */
+	width: 200%;
+}
+.edit2{
+	/* position: absolute; */
+	/* right: 0; */
+	width: 100%;
+}
+.lol{
+	display: block;
+	color: white;
+	text-align: center;
+	
+}
+.edit3{
+	width: 100%;
+	position: relative;
+	right: -100px;
+}

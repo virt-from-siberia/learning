@@ -1,0 +1,19 @@
+html, body{
+    margin: 40px;
+}
+
+.gallery img{
+    width: 400px;
+}
+
+.err{
+    outline: 1px solid red;
+}
+
+.focus{
+    box-shadow: 0 0 5px #ff0;
+}
+
+.loading{
+    display: none;
+}

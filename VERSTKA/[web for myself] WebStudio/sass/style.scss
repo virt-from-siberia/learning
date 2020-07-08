@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+@import "variables";
+@import "fonts";
+@import "mixins";
+@import "core";
+@import "smart-grid";
+
+
+html,
+body {
+    @include reset();
+    overflow-x: hidden!important;
+}
+
+
+@import "blocks/header";
+@import "blocks/social";
+@import "blocks/menu";
+@import "blocks/projects";
+@import "blocks/like";
+@import "blocks/links";

@@ -1,0 +1,99 @@
+body {
+    background-color: whitesmoke;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.forms {
+    margin: 0 auto;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+@media (min-width: 1024px) {
+    .forms {
+        width: 50%;
+    }
+}
+.auth,
+.registration {
+    margin: 0px;
+    width: 33%;
+    padding: 0px;
+}
+.forms > div:nth-child(2) {
+    border-left: 1px solid #ccc;
+    padding-left: 40px;
+    margin-left: 40px;
+}
+@media (max-width: 650px) {
+    .auth,
+    .registration {
+        width: 40%;
+    }
+    .forms {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .forms > div:nth-child(2) {
+        border-top: 1px solid #ccc;
+        border-left: none;
+        padding-left: 0px;
+        margin-left: 0px;
+        margin-top: 40px;
+    }
+}
+
+input {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 44px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.forms .register-btn {
+    cursor: pointer;
+    border: 0;
+    color: snow;
+    font-size: 12pt;
+    width: 100%;
+    min-height: 44px;
+    background-color: #333;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+.forms .auth-btn {
+    cursor: pointer;
+    border: 0;
+    color: snow;
+    font-size: 12pt;
+    width: 100%;
+    min-height: 44px;
+    background-color: #19a33c;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.debug {
+    max-width: 1200px;
+    padding: 10px;
+    margin: 10px auto;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}

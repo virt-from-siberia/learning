@@ -1,0 +1,13 @@
+.wrapper {
+    padding-top: 5rem;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.todo-empty {
+    text-align: center;
+}

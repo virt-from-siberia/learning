@@ -1,0 +1,117 @@
+@import "project.less";
+@import "smart-grid.less";
+
+.reset();
+
+.wrapper {
+    .wrapper();
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.debug {
+    .debug(rgba(0, 0, 0, 0.1), 1px dotted rgb(166, 158, 212));
+}
+
+.main {
+    .wrapper {
+
+
+        .product {
+            margin-top: 30px;
+            background: rgb(73, 71, 71);
+            padding: 10px;
+            .row-flex();
+
+            .sm-block( {
+                justify-content: center;
+            }
+
+            );
+
+            .productItem {
+                background: white;
+                margin: 20px 0;
+                min-height: 300px;
+                .row-flex();
+                flex-direction: column;
+                align-items: center;
+                .col();
+                .size(6);
+                .size-md(12);
+                .size-sm(18);
+                .size-xs(22);
+
+                // border: 1px solid black;
+
+                &__img {
+                    padding: 10px;
+                }
+
+                &__subtatle {
+                    padding: 5px;
+                }
+
+                &__price {
+                    padding: 5px;
+
+                    &-sale {
+                        background: yellow;
+                        padding: 5px;
+                        border: 1px solid rgba(0, 0, 0, 0.082);
+                        border-radius: 10px;
+                        transition: all 0.5s;
+
+                        &:hover {
+                            opacity: 0.5;
+                            background: rgb(255, 187, 0);
+                        }
+                    }
+                }
+
+                &__btn {
+                    display: flex;
+                    justify-content: center;
+                    width: 50%;
+                    margin-top: auto;
+                    margin-bottom: 20px;
+                    background: rgb(221, 93, 54);
+                    padding: 5px;
+                    border-radius: 5px;
+                    color: white;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    &-loading {
+                        display: flex;
+                        justify-content: center;
+                        width: 50%;
+                        margin-top: auto;
+                        margin-bottom: 20px;
+                        background: rgb(122, 102, 95);
+                        padding: 5px;
+                        border-radius: 5px;
+                        color: white;
+
+                    }
+
+                    &-done {
+                        display: flex;
+                        justify-content: center;
+                        width: 50%;
+                        margin-top: auto;
+                        margin-bottom: 20px;
+                        background: rgb(12, 231, 176);
+                        padding: 5px;
+                        border-radius: 5px;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

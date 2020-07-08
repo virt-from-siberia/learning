@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>React Examples</title>
+</head>
+
+<body>
+    <div class="react-container"></div>
+    <!-- Библиотеки React и ReactDOM -->
+    <script src="https://unpkg.com/react@15.4.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.4.2/dist/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js">
+    </script>
+    <script type="text/babel">
+        // Здесь размещается код JSX. Или же ссылка
+        // на отдельный файл JavaScript, содержащий код JSX
+
+
+
+
+
+
+
+        var data = [
+            {
+                "name": "Baked Salmon",
+                "ingredients": [
+                    { "name": "Salmon", "amount": 1, "measurement": "l lb" },
+                    { "name": "Pine Nuts", "amount": 1, "measurement": "cup" },
+                    { "name": "Butter Lettuce", "amount": 2, "measurement": "cups" },
+                    { "name": "Yellow Squash", "amount": 1, "measurement": "med" },
+                    { "name": "Olive Oil", "amount": 0.5, "measurement": "cup" },
+                    { "name": "Garlic", "amount": 3, "measurement": "cloves" }
+                ],
+                "steps": [
+                    "Preheat the oven to 350 degrees.",
+                    "Spread the olive oil around a glass baking dish.",
+                    "Add the salmon, garlic, and pine nuts to the dish.",
+                    "Bake for 15 minutes.",
+                    "Add the yellow squash and put back in the oven for 30 mins.",
+                    "Remove from oven and let cool for 15 minutes. Add the lettuce and serve."
+                ]
+            },
+            {
+                "name": "Fish Tacos",
+                "ingredients": [
+                    { "name": "Whitefish", "amount": 1, "measurement": "l lb" },
+                    { "name": "Cheese", "amount": 1, "measurement": "cup" },
+                    { "name": "Iceberg Lettuce", "amount": 2, "measurement": "cups" },
+                    { "name": "Tomatoes", "amount": 2, "measurement": "large" },
+                    { "name": "Tortillas", "amount": 3, "measurement": "med" }
+                ],
+                "steps": [
+                    "Cook the fish on the grill until hot.",
+                    "Place the fish on the 3 tortillas.",
+                    "Top them with lettuce, tomatoes, and cheese."
+                ]
+            }
+        ];
+
+
+
+        const Recipe = (props) => {
+
+
+        }
+
+        const Menu = (props) => (
+            <div>
+                <article>
+                    <header>
+                        <h1>{props.title}</h1>
+                    </header>
+                    <div className="recipes">
+                    </div>
+                </article>
+                <div className="recipes">
+                    {props.recipes.map((resipe, i) => {
+                        return (
+                            <div key={i}>
+                                <h2 >{props.name}</h2>
+                                <p >{props.ingredients}</p>
+                            </div>
+                        )
+                    })}
+                </div>
+            </div >
+
+
+        )
+
+        ReactDOM.render(
+            <Menu recipes={data} title="Delicious Recipes" />,
+            document.querySelector(".react-container")
+        )
+
+    </script>
+</body>
+
+</html>

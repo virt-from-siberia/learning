@@ -1,0 +1,12 @@
+body {
+    font-size: 30px;
+}
+
+
+.faq-answer {
+    display: none;
+}
+
+.faq-answer--shoewd {
+    display: block!important;
+}

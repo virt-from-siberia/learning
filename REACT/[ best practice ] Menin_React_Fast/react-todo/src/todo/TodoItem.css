@@ -1,0 +1,45 @@
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.re {
+    background: red;
+    border-radius: 30%;
+    color: #fff;
+    border: none;
+    transition: background 0.3s;
+}
+.re:active {
+    border: none;
+    outline: none;
+}
+.re:focus {
+    border: none;
+    outline: none;
+}
+
+.re:hover {
+    cursor: pointer;
+    background: rgb(255, 100, 100);
+    border: none;
+    outline: none;
+}
+
+.done {
+    text-decoration: line-through;
+    opacity: 0.5;
+}

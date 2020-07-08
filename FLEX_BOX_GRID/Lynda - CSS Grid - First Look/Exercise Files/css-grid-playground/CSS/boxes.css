@@ -1,0 +1,72 @@
+/*--------------------------------------------------------------
+Box styles
+--------------------------------------------------------------*/
+
+.box {
+    padding: 1em;
+    color: white;
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.blue,
+.lineblue,
+.dotsblue {
+    background-color: #2a80b9;
+}
+
+.purple,
+.linepurple,
+.dotspurple {
+    background-color: #8f44ad;
+}
+
+.green,
+.linegreen,
+.dotsgreen {
+    background-color: #16a086;
+}
+
+.yellow,
+.lineyellow,
+.dotsyellow {
+    background-color: #f1c40f;
+}
+
+.orange,
+.lineorange,
+.dotsorange {
+    background-color: #e77e23;
+}
+
+.red,
+.linered,
+.dotsred {
+    background-color: #e84c3d;
+}
+
+.slate,
+.lineslate,
+.dotsslate {
+    background-color: #34495e;
+}
+
+.lineblue,
+.linepurple,
+.linegreen,
+.lineyellow,
+.lineorange,
+.linered,
+.lineslate {
+    background-image: url('gfx/lines.svg');
+}
+
+.dotsblue,
+.dotspurple,
+.dotsgreen,
+.dotsyellow,
+.dotsorange,
+.dotsred,
+.dotsslate {
+    background-image: url('gfx/dots.svg');
+}

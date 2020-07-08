@@ -1,0 +1,35 @@
+html, body{
+    margin: 30px;
+    background: #eee;
+}
+
+.faq{
+    
+}
+
+.faq .item{ 
+    background: #ff0;
+    overflow: hidden;
+}
+
+.faq .item > div{
+    overflow: hidden;
+}
+
+.faq .item .ask{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.faq .item .ask, .faq .item .answer{
+    padding: 10px;
+}
+
+.demos .item{
+    min-height: 200px;
+    background: #f90;
+}
+
+.dsaf{
+    color: #86dfaeab;
+}

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sample">
+            <input type="text" v-model="firstName">
+            <input type="text" v-model="lastName">
+            <input type="text" v-model.lazy="promo">
+            <hr>
+            <h2>Hello,{{ fullName }}</h2>
+            <hr>
+            <button class="btn btn-success" v-on:click="showText = !showText">ToggleName</button>
+            <hr>
+            <div v-show="showText">Your sale is {{ sale}}</div>
+            
+        </div>
+    </div>
+    <script>
+        function getSale(code, callBack) {
+            let codes = {
+                newYear: 10,
+                some: 20
+            };
+            let sale = (codes[code] !== undefined) ? codes[code] : 0;
+            setTimeout(() => {
+                callBack(sale);
+            }, 500);
+            return sale;
+        }
+
+        let sample = new Vue({
+            el: '.sample',
+            data: {
+                firstName: '',
+                lastName: '',
+                showText: true,
+                promo: '',
+                sale: 0
+            },
+            computed: {
+                fullName() {
+                    console.log('render fullName');
+                    return this.firstName + this.lastName;
+                }
+            },
+            watch: {
+                promo() {
+                    getSale(this.promo, (sale) => {
+                        this.sale = sale + '%';
+                    });
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>

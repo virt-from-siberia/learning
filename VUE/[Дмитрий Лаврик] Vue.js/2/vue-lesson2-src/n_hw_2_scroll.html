@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" href="css//bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+	<style>
+	    .content{
+			height: 300px;
+			overflow: auto;
+		}
+	</style>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sample">
+            <form>
+        		<div class="content alert alert-info">
+					<p>This text no one reads. This text no one reads. This text no one reads.</p>
+					<p>This text no one reads. This text no one reads. This text no one reads.</p>
+					<p>This text no one reads. This text no one reads. This text no one reads.</p>
+					<p>This text no one reads. This text no one reads. This text no one reads.</p>
+					<p>This text no one reads. This text no one reads. This text no one reads.</p>
+					<p>This text no one reads. This text no one reads. This text no one reads.</p>
+					<p>This text no one reads. This text no one reads. This text no one reads.</p>
+					<p>This text no one reads. This text no one reads. This text no one reads.</p>
+					<p>This text no one reads. This text no one reads. This text no one reads.</p>
+					<p>This text no one reads. This text no one reads. This text no one reads.</p>
+				</div>
+				<div class="form-check">
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox"> 
+						1
+					</label>
+		        </div>
+		        <div class="form-check">
+					<label class="form-check-label">
+						<input class="form-check-input" type="radio"> 
+						2
+					</label>
+				</div>
+			    <hr>
+				<button class="btn btn-primary">
+					Send Data
+				</button>
+			</form>
+			<div>
+				<table class="table table-bordered">
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+			</div> 
+		</div>
+    </div>
+	<script>
+		
+		new Vue({
+			el: '.sample',
+			data: {
+				
+			}
+		});
+
+	</script>
+</body>
+</html>

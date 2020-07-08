@@ -1,0 +1,12 @@
+* {
+    /* font-family: 'Chilanka', cursive; */
+    color: black;
+}
+
+body{
+    background: rgb(255, 255, 224);
+    font-size: 24PX;
+}
+ img{
+     width: 150px;
+ }

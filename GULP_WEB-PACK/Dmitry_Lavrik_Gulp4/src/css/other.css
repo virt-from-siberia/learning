@@ -1,0 +1,10 @@
+a {
+    text-decoration: none;
+}
+
+
+@media screen and(max-width: 200px) {
+    a {
+        font-size: 15px;
+    }
+}

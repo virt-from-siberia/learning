@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.scroll h1 {
+    color: white;
+    font-size: 100px;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+}
+
+.banner {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('img/1642091.jpg');
+    background-size: cover;
+    background-position: center center;
+
+}
+
+.content {
+    padding: 60px;
+    font-family: poppins;
+}
+
+.scrollUP {
+    display: flex;
+    pointer-events: none;
+    transition: .5s;
+    position: fixed;
+    bottom: 16px;
+    right: 60px;
+    opacity: 0;
+}
+
+.scrollUP img {
+    width: 60px;
+}
+
+.scrollUP.active {
+    bottom: 32px;
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(-55px);
+}
+
+@media(max-width:600px) {
+    .scrollUP {
+        right: 10px;
+
+    }
+
+    .scrollUP.active {
+        opacity: 0.9;
+        bottom: 0px;
+        transform: translateY(-35px);
+    }
+
+
+    .scroll h1 {
+
+        font-size: 20px;
+
+    }
+
+    .content {
+        padding: 10px;
+
+    }
+}

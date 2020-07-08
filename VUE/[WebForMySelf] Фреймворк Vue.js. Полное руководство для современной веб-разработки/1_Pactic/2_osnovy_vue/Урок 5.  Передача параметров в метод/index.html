@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=   ">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>{{title}} = {{counter}}</h2>
+        <button v-on:click="counterPlus(plus.one, 'Изменено на ' + plus.one, $event)">Увеличить на {{plus.one}}</button>
+        <hr>
+
+
+
+
+        <h2>{{title}} = {{counter}}</h2>
+        <button v-on:click="counterPlus(plus.five, 'Изменено на ' + plus.five, $event)">Увеличить на {{plus.five}}
+        </button>
+        <hr>
+
+
+        <button v-on:click="clearStyles()">{{clear}}</button>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                counter: 0,
+                plus: {
+                    one: 1,
+                    five: 5,
+
+                },
+                title: 'Счтчик',
+                clear: 'Очистить'
+            },
+            methods: {
+                counterPlus: function (num, str, evt) {
+                    this.counter += num;
+                    this.title = str;
+
+                    if (num === 5) {
+                        evt.target.style.background = 'blue';
+                        evt.target.style.color = 'white';
+                    }
+                    if (num === 1) {
+                        evt.target.style.background = 'red';
+                        evt.target.style.color = 'white';
+                    }
+                },
+                clearStyles() {
+                    let container = this.$el.querySelectorAll('button');
+                    container.forEach(element => {
+                        element.style.background = 'none';
+                        element.style.color = 'black';
+                    });
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

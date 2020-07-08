@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>1</title>
+	<link rel="stylesheet" href="css//bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link href="css/styles.css" rel="stylesheet">
+	<script src="js/vue.js"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="sample">
+			<form v-on:submit.prevent="formSubmited = true" v-if="!formSubmited">
+				<div class="progress">
+					<div class="progress-bar" v-bind:style="progressWidth"></div>
+				</div>
+				<div>
+					<div class="form-group" v-for="(item, index) in info">
+						<label>{{item.name}} </label>
+
+						<span v-if="controls[index].error">1</span>
+						<span v-else="controls[index]">2</span>
+						<span class="fa" v-if="controls[index].activated"
+							v-bind:class="controls[index].error ? 'fa-exclamation-circle text-danger' : 'fa-check-circle text-success'"></span>
+
+
+						<input type="text" class="form-control" v-bind:value="item.value"
+							v-on:input="onInput(index, $event.target.value)">
+						{{controls.error}}
+					</div>
+				</div>
+				<button class="btn btn-primary" v-bind:disabled="done < info.length">
+					Send Data
+				</button>
+			</form>
+			<div v-if="formSubmited">
+				<tr>
+					<table class="table table-bordered">
+						<tr v-for="(item, index) in info">
+							<td>{{item.name}}</td>
+							<td>{{item.value}}</td>
+						</tr>
+					</table>
+				</tr>
+			</div>
+		</div>
+	</div>
+	<script>
+
+		new Vue({
+			el: '.sample',
+			data: {
+				info: [
+					{
+						name: 'Name',
+						value: '',
+						pattern: /^[a-zA-Z ]{2,30}$/
+					},
+					{
+						name: 'Phone',
+						value: '',
+						pattern: /^[0-9]{7,14}$/
+					},
+					{
+						name: 'Email',
+						value: '',
+						pattern: /.+/
+					},
+					{
+						name: 'Some Field 1',
+						value: '',
+						pattern: /.+/
+					},
+					{
+						name: 'Some Field 2',
+						value: '',
+						pattern: /.+/
+					}
+				],
+				controls: [],
+				formSubmited: false
+			},
+			beforeMount() {
+				for (let i = 0; i < this.info.length; i++) {
+					this.controls.push({
+						error: true,
+						activated: false
+					});
+				}
+			},
+			methods: {
+				onInput(index, value) {
+
+					let data = this.info[index];
+					let control = this.controls[index];
+
+					data.value = value;
+					control.error = !data.pattern.test(value)
+					control.activated = true;
+
+				}
+			},
+			computed: {
+				done() {
+					let done = 0;
+
+					for (let i = 0; i < this.controls.length; i++) {
+						if (!this.controls[i].error) {
+							done++
+						}
+					}
+					return done;
+				},
+				progressWidth() {
+					return {
+						width: (this.done / this.controls.length * 100) + '%'
+					}
+				}
+			}
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,560 @@
+body,
+html {
+    overflow-x: hidden;
+}
+
+* {
+    outline: none !important;
+    scroll-behavior: smooth;
+}
+
+header {
+    position: relative;
+    z-index: 1000000;
+}
+
+p {
+    font-size: 1.15em;
+}
+
+.navbar {
+    background: transparent !important;
+    transition: 1s;
+
+    .fas {
+        color: rgb(20, 150, 89);
+        font-size: 2.5em;
+    }
+
+}
+
+.scrolled {
+    background: rgba(0, 0, 0, 0.8) !important;
+    transition: 1s;
+}
+
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link {
+    color: white;
+    background: rgb(20, 150, 89);
+    border-radius: 5px;
+}
+
+.navbar-light .navbar-nav .active>.nav-link:hover {
+    color: #000;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 8);
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+    color: white;
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:visited {
+    color: rgba(255, 255, 255, 8);
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.banner {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url('../img/381544.jpg') !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    margin-bottom: 0 !important;
+}
+
+.banner:before,
+.sec2:before,
+.contacts:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(#000, transparent);
+    pointer-events: none;
+}
+
+.banner:after,
+.sec2:after,
+.contacts:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(360deg, #000, transparent);
+    pointer-events: none;
+}
+
+.height100p {
+    height: 100vh;
+}
+
+.h100 {
+    height: 100%;
+}
+
+.contentBox {
+    padding-top: 300px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    text-align: center;
+    z-index: 10;
+
+    h1 {
+        font-weight: bold;
+        color: $white;
+        text-transform: uppercase;
+        font-size: 5rem;
+    }
+
+    p {
+        color: $white;
+        font-size: 1.3rem;
+    }
+
+    .iconsBlock {
+        padding-top: 100px;
+
+        .cli {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            li {
+                list-style: none;
+                margin: 0 20px;
+
+                a {
+                    color: rgba(255, 255, 255, 0.637);
+                    font-size: 3em;
+                    transition: 0.5s;
+
+                    &:hover {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+.sec1 {
+    padding: 100px 0;
+    background: $black;
+
+    .headerText {
+
+        h2 {
+            font-size: 2.5rem;
+            color: $white;
+        }
+
+        p {
+            color: $white;
+            margin-bottom: 20px;
+        }
+    }
+
+
+    .PlaceBox {
+        position: relative;
+        max-width: 300px;
+        height: 400px;
+        margin: 0 auto;
+        background: $black;
+        margin-top: 30px;
+
+        .imgBx {
+            width: 100%;
+            height: 100%;
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                opacity: 1;
+                transition: 1s all;
+            }
+        }
+
+        .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: baseline;
+            align-items: flex-end;
+
+            h3 {
+                position: relative;
+                margin: 0;
+                padding: 10px;
+                color: $white;
+                background: rgba(0, 0, 0, .95);
+                font-size: 20px;
+                font-weight: 600;
+                width: 100%;
+                text-align: center;
+
+                span {
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: $second;
+                }
+            }
+        }
+
+        &:hover {
+            .imgBx {
+                img {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+
+.sec2 {
+    position: relative;
+    background: url('../img/nigth.jpg') !important;
+    background-size: cover !important;
+    height: 100vh;
+
+    h1 {
+        font-weight: 800;
+        color: $white;
+        text-transform: uppercase;
+        font-size: 4.5rem;
+    }
+
+    .btnD1 {
+        border: 2px solid $white;
+        color: $black;
+        background: $white;
+        border-radius: 50px;
+        padding: 15px 50px;
+        font-size: 1.15rem;
+        outline: none;
+        font-weight: 500;
+        margin-top: 20px;
+        transition: 0.5s all;
+
+        &:hover {
+            color: $blue;
+        }
+    }
+}
+
+
+.blog {
+    position: relative;
+    padding: 100px 0;
+    background: $black;
+
+
+    .headText {
+        h2 {
+            font-size: 2.5rem;
+            color: $white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        p {
+            color: $white;
+            text-align: center;
+            font-size: 1.15rem;
+            padding: 20px 0;
+        }
+    }
+}
+
+.blogPost {
+    position: relative;
+    width: 100%;
+    margin-top: 30px;
+    background: $white;
+
+    .imgBx {
+        height: 400px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .content {
+        padding: 15px;
+
+
+        h2 {
+            margin: 0;
+            padding: 0 0 10px;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+
+        .btnD2 {
+            background: $btnBackground;
+            color: $white;
+            border-radius: 30px;
+            padding: 10px 20px;
+            float: right;
+            transition: 0.5s;
+
+            &:hover {
+                color: $second;
+            }
+        }
+    }
+}
+
+
+.contacts {
+    position: relative;
+    padding: 100px 0;
+    background: url('../img/123123.jpg');
+    background-size: cover;
+    min-height: 100vh;
+
+
+    .headerText {
+
+        h2 {
+            font-size: 2.5rem;
+            color: $white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        p {
+            color: $white;
+            text-align: center;
+            font-size: 1.15rem;
+            padding: 20px 0;
+        }
+    }
+
+    form {
+        margin-top: 20px;
+        position: relative;
+        z-index: 1000;
+    }
+
+    .form {
+
+        background: rgba(119, 119, 119, 0.123);
+        padding: 15px;
+        border-radius: 15px;
+        box-shadow: 1px 1px 5px black;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+
+
+
+        // #42132B
+
+        .form-control {
+            background: transparent;
+            border: none;
+            border-bottom: 1px dotted rgba(255, 255, 255, .3);
+            height: 50px;
+            border-radius: 5px;
+            // background: rgba(0, 0, 0, .6);
+            background: linear-gradient(360deg, rgba(150, 151, 151, 0.2), transparent);
+            color: $white;
+            font-size: 1.25rem;
+            outline: none;
+
+            &:focus,
+            &:hover {
+                border: none;
+                border-bottom: 1px dotted rgba(255, 255, 255, 1);
+                box-shadow: none;
+
+            }
+        }
+
+        label {
+            color: $white;
+            opacity: 0.6;
+            font-size: 1.25rem;
+        }
+
+        .btnD1 {
+            border: 1px solid rgba(255, 255, 255, 0.438);
+            color: $white;
+            background: rgba(255, 255, 255, 0.089);
+            border-radius: 50px;
+            padding: 15px 50px;
+            font-size: 1.15rem;
+            outline: none;
+            font-weight: 500;
+            margin-top: 20px;
+            transition: 0.5s all;
+
+            &:hover {
+                background: rgba(255, 255, 255, 1);
+                color: $black;
+            }
+        }
+    }
+}
+
+
+footer {
+    background: $black;
+
+    .cli {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        li {
+            list-style: none;
+            margin: 0 20px;
+
+            a {
+                color: #777;
+                font-size: 2em;
+                transition: 0.5s;
+
+                &:hover {
+                    color: $white;
+                }
+
+            }
+        }
+    }
+
+    .cpryt {
+        padding-top: 20px;
+        text-align: center;
+        color: #777;
+        margin-bottom: 50px;
+    }
+}
+
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .navbar {
+
+        .fas {
+            color: rgb(20, 150, 89);
+            font-size: 1.5em !important;
+            position: relative;
+            left: -50px;
+        }
+
+    }
+
+    .navbar-light .navbar-toggler {
+        background: rgb(20, 150, 89);
+        border-radius: 5px;
+    }
+
+    .banner {
+        height: 100vh;
+        padding: 100px 0;
+    }
+
+    .contentBox h1 {
+        // padding-top: 350px;
+        font-size: 2rem;
+    }
+
+    .iconsBlock {
+        .cli {
+            li {
+                a {
+                    font-size: 2em !important;
+                }
+            }
+        }
+    }
+
+    .nav-link {
+        padding-left: 10px !important;
+    }
+
+    .contentBox {
+        padding-top: 0;
+    }
+
+    .blog {
+        padding: 0;
+    }
+
+    .sec1 {
+        padding: 0;
+    }
+
+    .blogPost {
+
+        .imgBx {
+            height: 200px;
+        }
+
+        .content {
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    footer{
+        .cli{
+            li{
+                padding: 0 10px;
+                margin: 0;
+            }
+        }
+    }
+}

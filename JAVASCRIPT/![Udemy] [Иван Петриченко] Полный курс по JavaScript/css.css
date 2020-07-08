@@ -1,0 +1,28 @@
+
+#box{
+    display: box;
+    background: red;
+    width: 150px;
+    height: 150px;
+}
+
+.cirecle{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    background: blue;
+}
+
+.heart{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    background: rgb(255, 0, 149);
+}
+
+.black{
+    width: 150px;
+    height: 200px;
+    background: black;
+    color: aqua;
+}

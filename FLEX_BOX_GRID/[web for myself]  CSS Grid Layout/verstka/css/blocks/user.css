@@ -1,0 +1,52 @@
+.user {
+    display: grid;
+    grid-template-columns: minmax(290px, 690px) 270px;
+    align-items: center;
+}
+
+.user__info {
+    list-style: none;
+    margin: 25px 0;
+    margin-right: 15px;
+    border-right: 1px solid grey;
+}
+
+.user__btn {
+    justify-self: end;
+}
+
+.user__btn button {
+    border-radius: 5px;
+    background: rgb(255, 0, 98);
+    color: white;
+    width: 190px;
+    font-size: 21px;
+    line-height: 1.2;
+    font-weight: bold;
+    padding: 5px;
+    border: none;
+    display: block;
+    box-shadow: 2px 2px 2px black;
+    cursor: pointer;
+    outline: none;
+    transition: 1s;
+}
+
+.user__btn button:hover {
+    background: rgb(255, 0, 129);
+}
+
+
+@media(max-width: 680px) {
+    .user {
+        grid-template-columns: auto;
+    }
+
+    .user__info {
+        border-right: none;
+    }
+    .user__btn {
+        justify-self: center;
+        margin-bottom: 25px;
+    }
+}

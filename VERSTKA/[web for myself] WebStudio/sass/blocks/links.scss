@@ -1,0 +1,20 @@
+.links {
+    margin: 0;
+    padding: 0;
+
+}
+
+.links__link {
+    font-size: 20px;
+    line-height: 1.1;
+    color: $white;
+    text-decoration: none;
+    box-sizing: border-box;
+    padding-left: 25px;
+    transition: 0.5s;
+
+    &:hover {
+        color: $black;
+        background: url('../img/arrow.svg') left no-repeat;
+    }
+}

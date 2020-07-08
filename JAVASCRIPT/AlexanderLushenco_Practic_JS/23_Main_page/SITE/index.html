@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cabinet</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <!--Let browser know website is optimized for mobile-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+
+
+</head>
+
+<body>
+
+    <button class="btn red modal-trigger" data-target="terms">normanl modal</button>
+    <button class="btn green">normanl modal</button>
+
+    <div class="modal" id="terms">
+        <div class="modal-content">
+            <h3>Terms</h3>
+        </div>
+
+
+        <div class="modal-footer">
+            <button class="btn teal">Agree</button>
+            <button class="btn red modal-action modal-close">Cansel</button>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="header site-header">
+        <div class="container">
+            <div class="row">
+                <div class="col l10">
+                    <h1 class="site-title center-align">Our project</h1>
+                </div>
+                <div class="col l2"></div>
+            </div>
+        </div>
+    </div>
+
+    <form method="">
+        <div class="container">
+            <div class="row">
+                <h2 class="site-title center-align   green accent-4 header-users">REGISTRATION USERS</h2>
+                <div class="col l2 xl2 m2 hide-on-small-only"></div>
+                <div class="input-field col xl8 m8 l8 s12">
+                    <input placeholder="name" id="signup-name" type="text" class="validate">
+                    <label for="login-pass">Nmae</label>
+                </div>
+                <div class="col l2 xl2 m2 hide-on-small-only"></div>
+            </div>
+
+            <div class="row">
+                <div class="col l2 xl2 m2 hide-on-small-only"></div>
+                <div class="input-field col xl8 m8 l8 s12">
+                    <input placeholder="password" id="signup-pass" type="text" class="validate">
+                    <label for="login-pass">password</label>
+                </div>
+                <div class="col l2 xl2 m2 hide-on-small-only"></div>
+            </div>
+
+            <div class="row">
+                <div class="col l2 xl2 m2 hide-on-small-only"></div>
+                <div class="input-field col xl8 m8 l8 s12">
+                    <input placeholder="email" id="signup-email" type="email" class="validate">
+                    <label for="login-pass">email</label>
+                </div>
+                <div class="col l2 xl2 m2 hide-on-small-only"></div>
+            </div>
+
+            <div class="row">
+                <div class="col l2 xl2 m2 hide-on-small-only"></div>
+                <div class="input-field col xl8 m8 l8 s12">
+                    <input placeholder="birthday" id="signup-birthday" type="text" class="validate">
+                    <label for="login-pass">birthday</label>
+                </div>
+                <div class="col l2 xl2 m2 hide-on-small-only"></div>
+            </div>
+            <div class="row">
+                <h3 class="center-align sex">Take your Sex</h3>
+                <div class="col l5 m5 hide-on-small-only"></div>
+                <div class="col l2 m2 s10">
+                    <p>
+                        <label>
+                            <input name="sex" type="radio" value="male" checked class="sex" />
+                            <span>Male</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input name="sex" type="radio" value="female" class="sex" />
+                            <span>Female</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input name="sex" type="radio" value="other" class="sex" />
+                            <span>Other</span>
+                        </label>
+                    </p>
+                </div>
+                <div class="col l5 m5  hide-on-small-only"></div>
+            </div>
+        </div>
+
+
+
+
+        <!-- <div>name: <input type="text" name="name" id="signup-name"></div> -->
+        <!-- <div>password: <input type="text" name="pass" id="signup-pass"></div> -->
+        <!-- <div>email: <input type="text" name="email" id="signup-email"></div> -->
+        <!-- <div>birthday: <input type="text" name="birthday" id="signup-birthday"></div> -->
+        <!-- <div>sex:
+            <div> <input type="radio" value="male" name="sex" checked class="sex">male</div>
+            <div><input type="radio" value="female" name="sex" class="sex">female</div>
+            <div><input type="radio" value="other" name="sex" class="sex" checked>other</div>
+        </div> -->
+        <input type="submit" value="send" id="signup-submit">
+    </form>
+
+    <hr>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <!-- <h2>LOGIN USERS</h2> -->
+
+    <form method="">
+        <div class="container">
+            <div class="row">
+                <h2 class="site-title center-align  light-blue darken-3 header-users">LOGIN USERS</h2>
+                <div class="col l2 xl2 m2 hide-on-small-only"></div>
+                <div class="input-field col xl8 m8 l8 s12">
+                    <input placeholder="Yor Login" id="login-pass" type="password" class="validate">
+                    <label for="login-pass">Password</label>
+                </div>
+                <div class="col l2 xl2 m2 hide-on-small-only"></div>
+            </div>
+            <div class="row">
+                <div class="col l2 xl2 m2 hide-on-small-only"></div>
+                <div class="input-field col xl8 m8 l8 s12">
+                    <input placeholder="Yor Email" id="login-email" type="text" class="validate">
+                    <label for="login-email">email</label>
+                </div>
+                <div class="col l2 xl2 m2 hide-on-small-only"></div>
+            </div>
+            <div class="col l12 center-align button">
+                <button id="login-submit" class="waves-effect waves-light btn-large"><i
+                        class="material-icons right">input</i>Login</button>
+            </div>
+
+        </div>
+
+        <!-- <div>password: <input type="text" name="pass" id="login-pass" value="samsungs8"></div>
+        <div>email: <input type="text" name="email" id="login-email" value="alonso85@mail.ru"></div> -->
+        <!-- <input type="submit" value="login" id="login-submit"> -->
+    </form>
+
+    <div class="user_data"></div>
+
+    <script src="script/jquery.js"></script>
+    <script src="script/materialize.js"></script>
+    <script src="script/modal.js"></script>
+    <script src="script/ajax.js"></script>
+    <script src="script/script.js"></script>
+</body>
+
+</html>

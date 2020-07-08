@@ -1,0 +1,10 @@
+.text-wrap {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.b-right {
+    border-right: 1px dotted rgba(128, 128, 128, 0.555);
+}

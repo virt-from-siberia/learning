@@ -1,0 +1,29 @@
+* {
+    font-size: 24px;
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    box-sizing: border-box;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(2, 150px);
+    justify-content: space-between;
+    align-content: space-around;
+    height: 500px;
+}
+
+.grid_element {
+    background-color: #f00;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+}

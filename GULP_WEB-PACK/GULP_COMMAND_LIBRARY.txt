@@ -1,0 +1,41 @@
+// ПРИ ПЕРЕНОСЕ ПРОЕКТА КОМАНДА
+nmp i
+
+
+//установка gulp
+npm install gulp@3.9.1
+
+//восствновление всех пакетов при переносе 
+npm i 
+
+//установка browser-sync
+npm i browser-sync
+
+//установка less
+npm i gulp-less
+
+//установка gulp-notify Уведомления об ошибках
+npm i gulp-notify
+
+//установка gulp-plumber Ошибки
+npm i gulp-plumber
+
+//установка автопрефиксиров
+npm i autoprefixer
+
+//установка souremaps
+npm i gulp-sourcemaps
+
+//установка pug
+npm i gulp-pug
+
+//установка плагина удоление
+npm i del
+
+//установка плагина rus siquens порядок запуска тасков
+npm i run-sequence
+
+
+
+
+

@@ -1,0 +1,187 @@
+@import "project.less";
+@import "smart-grid.less";
+
+.reset();
+
+.wrapper {
+    .wrapper();
+}
+
+
+.debug {
+    .debug(rgba(114, 114, 114, 0.5), 1px solid rgba(179, 255, 0, 0.459));
+}
+
+body {
+    transition: all ease 1s;
+}
+
+// .body-active {
+//     margin-left: 300px;
+// }
+
+
+#menu {
+    width: 300px;
+    margin-left: -245px;
+    background: #fbf0ff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transition: all ease 1s;
+    z-index: 9999;
+    opacity: 0.8;
+
+
+
+    .c-hamburger {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        width: 55px;
+        height: 55px;
+        font-size: 0;
+        cursor: pointer;
+        border: 0;
+
+        &:focus {
+            outline: 0;
+        }
+
+        span {
+            display: block;
+            position: absolute;
+            top: 25px;
+            left: 18px;
+            right: 8px;
+            height: 3px;
+            background: white;
+
+            &::before {
+                position: absolute;
+                display: block;
+                left: 0;
+                top: -10px;
+                width: 100%;
+                height: 3px;
+                background: white;
+                content: "";
+
+
+            }
+
+            &::after {
+                position: absolute;
+                display: block;
+                left: 0;
+                bottom: -10px;
+                width: 100%;
+                height: 3px;
+                background: white;
+                content: "";
+            }
+        }
+    }
+
+    .c-hamburger-line {
+        background: #28cc59e3;
+        transition: background 0.5s;
+
+        span {
+
+            transition: background 0s 0.3s;
+
+            &::before {
+
+                // ANIMATION
+                transition-duration: 0.3s, 0.3s;
+                transition-delay: 0.3s, 0s;
+                transition-property: top, transform;
+
+            }
+
+            &::after {
+                // ANIMATION
+                transition-duration: 0.3s, 0.3s;
+                transition-delay: 0.3s, 0s;
+                transition-property: bottom, transform;
+            }
+        }
+
+    }
+
+    .is-active {
+        background: red;
+
+
+        span {
+            background: none;
+
+            &::before {
+                top: 0;
+                transform: rotate(-45deg);
+                transition-delay: 0s, 0.1s;
+            }
+
+            &::after {
+                bottom: 0;
+                transform: rotate(45deg);
+                transition-delay: 0s, 0.1s;
+            }
+        }
+    }
+
+    .content-inside {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 100px 10px 10px 10px;
+        //ANIMATION
+        opacity: 0;
+        transition-delay: 0.3s;
+        transition: ease 2s;
+
+        a {
+            font-size: 3em;
+            text-decoration: none;
+            transition:  0.5s;
+            
+            &:hover {
+                transition:  0.5s;
+                text-decoration: underline;
+            }
+        }
+
+    }
+
+    .content-show {
+
+        opacity: 1;
+        transition-delay: 0.3s;
+    }
+}
+
+
+#menu.nav-active {
+    margin-left: 0;
+}
+
+
+.wrapper {
+
+    .main {
+
+        margin-left: 50px;
+
+        &_header_h1 {
+            text-align: center;
+            font-size: 3em;
+        }
+    }
+}

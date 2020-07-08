@@ -1,0 +1,51 @@
+//// https://habr.com/ru/post/305900/
+
+///  https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let
+
+///  https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/const
+
+/// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+
+/// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Default_parameters
+
+/// http://jsraccoon.ru/es6-classes
+
+/// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes
+
+/// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+
+/// https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest
+
+/// https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest
+
+/// https://developer.mozilla.org/ru/docs/Web/API/FormData/Using_FormData_Objects
+
+/// https://ilikekillnerds.com/2017/09/convert-formdata-json-object/
+
+/// https://ru.wikipedia.org/wiki/Заголовки_HTTP
+
+/// https://learn.javascript.ru/promise
+
+/// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+
+https://tproger.ru/articles/localstorage/
+
+https://learn.javascript.ru/exception
+
+https://www.w3schools.com/js/js_errors.asp
+
+http://www.codenet.ru/progr/cpp/ipn.php
+
+https://learn.javascript.ru/modules
+
+https://learn.javascript.ru/closures-module
+
+https://www.npmjs.com/package/browserify
+
+https://frontender.info/es6-modules/
+
+https://frontender.info/writing-testable-javascript/
+
+
+sdfsd

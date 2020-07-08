@@ -1,0 +1,10 @@
+
+mixin product-cart(imgsrc, title, color, price)
+
+.product-cart
+    .product-cart-img
+        img(src="../../img/products/" + imgsrc, alt="Photo")
+    .product-cart-content
+        .product-cart-title= title
+        .product-cart-color= color
+        .product-cart-price= price

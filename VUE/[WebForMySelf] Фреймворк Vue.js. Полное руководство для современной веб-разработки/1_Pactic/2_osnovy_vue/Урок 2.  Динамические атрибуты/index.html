@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=   ">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-on:input="changeURL">
+        <h2>
+            <a v-bind:href="url">google</a>
+        </h2>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                url: 'http://google.com'
+            },
+            methods: {
+                changeURL(event) {
+                    this.url = event.target.value
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

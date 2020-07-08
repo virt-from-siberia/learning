@@ -1,0 +1,43 @@
+html,
+body {
+    margin: 0;
+}
+
+.fields {
+    border-left: 1px solid #000;
+    border-top: 1px solid #000;
+    width: 400px;
+    margin: 20px;
+    overflow: hidden;
+}
+
+.fields>div {
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    float: left;
+}
+
+.fields>div.row-start {
+    clear: both;
+}
+
+.fields>div[data-game="fruit"] {
+    background: url('../img/cherry-pngrepo-com.png');
+    background-size: cover;
+}
+
+.fields>div[data-game="snake"] {
+    background: #ff0;
+}
+
+.fields>div[data-game="frog"] {
+    background: rgb(10, 167, 75);
+}
+
+.fields>div[data-game="walls"] {
+    background: rgb(159, 161, 160);
+    border: 2px solid black;
+}

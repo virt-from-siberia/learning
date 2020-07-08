@@ -1,0 +1,46 @@
+/**
+ * The primary stylesheet for the CSS Grid Playground.
+ * This sheet pulls in surrounding components allowing you to focus on specifics.
+ */
+
+/* Components */
+@import url('CSS/reset.css');
+@import url('CSS/accessibility.css');
+@import url('CSS/layout.css');
+@import url('CSS/typography.css');
+@import url('CSS/masthead.css');
+@import url('CSS/boxes.css');
+
+/* CSS Grid Playground */
+
+.the-grid {
+
+    display: grid;
+
+    /* grid-template-columns: 1fr repeat(3,  1fr); */
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header header header header header header header"
+        "sidebarleft content content content content content  sidebarright"
+        "footer footer footer footer footer footer footer";
+}
+
+.blue {
+    grid-area: header;
+}
+
+.purple {
+    grid-area: sidebarleft;
+}
+
+.green {
+    grid-area: content;
+}
+
+.yellow {
+    grid-area: sidebarright;
+}
+
+.orange {
+    grid-area: footer;
+}

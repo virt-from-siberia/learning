@@ -1,0 +1,34 @@
+.container {
+  padding: 0 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  background: #c0c0f5;
+}
+.col {
+  margin: 15px;
+  box-sizing: border-box;
+}
+.user-card {
+  width: calc(100% / 12 * 3 - 30px);
+  background: #3d3de0;
+  color: white;
+}
+@media screen and (max-width: 720px) {
+  .user-card {
+    width: calc(100% / 12 * 6 - 30px);
+  }
+}
+.text-center {
+  text-align: center;
+}
+.product-card {
+  background: wheat;
+  color: black;
+  width: calc(100% / 12 * 4 - 30px);
+}

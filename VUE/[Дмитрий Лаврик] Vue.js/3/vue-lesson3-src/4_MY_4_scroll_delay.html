@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>1</title>
+	<link rel="stylesheet" href="css//bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link href="css/styles.css" rel="stylesheet">
+	<style>
+		.content {
+			height: 300px;
+			overflow: auto;
+		}
+	</style>
+	<script src="js/vue.js"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="sample">
+			<app-some v-for="(elem , index) in values" :key="index" v-bind:min='elem.min' v-bind:max='elem.max'
+				v-on:plusdouble="onPlus(index)" v-on:minusdouble="onMinus(index)">
+
+			</app-some>
+		</div>
+	</div>
+	<script>
+		Vue.component('app-some', {
+			props: ['min', 'max'],
+			template: `
+				<div>
+					<h2>{{number}}</h2>
+					<hr>
+					<button class=" btn btn-success" v-on:click="onClickPlus">+</button>
+				<button class="btn btn-danger" v-on:click="onClickMinus">-</button>
+		</div>
+		`,
+			data() {
+				return {
+
+				}
+
+			},
+			computed: {
+				number() {
+					return Math.floor(Math.random() * (this.max - this.min)) + this.min;
+				}
+			},
+			methods: {
+				onClickPlus(evt) {
+					this.$emit('plusdouble');
+				},
+				onClickMinus(evt) {
+					this.$emit('minusdouble');
+				}
+
+			},
+		});
+		new Vue({
+			el: '.sample',
+			data: {
+				values: [
+					{
+						min: 1,
+						max: 5
+					},
+					{
+						min: 5,
+						max: 10
+					},
+					{
+						min: 10,
+						max: 15
+					}
+				]
+			},
+			methods: {
+				onPlus(index) {
+					this.values[index].min += 5;
+					this.values[index].max += 5;
+				},
+				onMinus(index) {
+					if (this.values[index].min <= 0 || (this.values[index].min - 5) <= 0) {
+						this.values[index].min = 0;
+					} else {
+						this.values[index].min -= 5;
+					}
+					if (this.values[index].max <= 0 || (this.values[index].max - 5) <= 0) {
+						this.values[index].max = 0;
+					} else {
+						this.values[index].max -= 5;
+					}
+
+
+				}
+			}
+		});
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<<<<<<< Updated upstream
+    <title>Vue JS</title>
+    <style>
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 1px solid black;
+            display: inline-block;
+            margin: 40px;
+            transition: 0.5s;
+        }
+
+        .red {
+            background: red;
+        }
+
+        .blue {
+            background: blue;
+        }
+
+        .green {
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                color: 'red',
+                heigth: 100,
+                width: 100
+            },
+            computed: {
+                circleClasses() {
+                    return {
+                        'background': this.color, 'height': this.heigth + 'px', 'width': this.width + 'px'
+                    }
+                }
+            }
+        })
+
+=======
+    <meta name="viewport" content="width=device-width, initial-scale=   ">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2 v-if="type == 'a'">A</h2>
+        <h2 v-else-if="type == 'b'">B</h2>
+        <h2 v-else-if="type == 'c'">C</h2>
+        <h2 v-else>not much</h2>
+
+
+        <hr>
+
+        <input type="text" v-model="type">
+
+    </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                type: 'a'
+            },
+            methods: {
+
+            },
+        })
+>>>>>>> Stashed changes
+    </script>
+</body>
+
+</html>

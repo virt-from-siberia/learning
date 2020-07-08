@@ -1,0 +1,22 @@
+@import "~antd/dist/antd.css";
+@import "~reset-css";
+@import "./variables";
+@import "./companents/layouts/chat.scss";
+
+body,
+html,
+#root,
+.wrapper {
+    color: $black;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    height: 100%;
+}
+
+body {
+    background: $bg;
+}
+
+* {
+    outline: 0;
+}

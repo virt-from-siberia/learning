@@ -1,0 +1,20 @@
+.site-header {
+    background: #26a69a;
+}
+
+.site-title {
+    font-size: 3rem !important;
+    color: white;
+}
+
+.button {
+    margin-bottom: 100px;
+}
+
+.header-users {
+    padding: 20px;
+}
+
+.sex {
+    font-size: 1rem!important;
+}

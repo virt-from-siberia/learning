@@ -1,0 +1,8 @@
+.add-block {
+    display: flex;
+    justify-content: center;
+}
+
+.add-header {
+    text-align: center;
+}

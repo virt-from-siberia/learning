@@ -1,0 +1,28 @@
+html, body{
+    margin: 0;
+}
+
+.fields{
+    border-left: 1px solid #000;
+    border-top: 1px solid #000;
+    width: 400px;
+    margin: 20px;
+    overflow: hidden;
+}
+
+.fields > div{
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    float: left;
+}
+
+.fruit{
+    background: #f00;
+}
+
+.snake{
+    background: #ff0;
+}

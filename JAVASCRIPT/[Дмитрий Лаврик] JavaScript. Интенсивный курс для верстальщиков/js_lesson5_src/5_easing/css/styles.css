@@ -1,0 +1,26 @@
+html, body{
+    margin: 0;
+    background: #eee;
+}
+
+.faq{
+    padding: 30px;
+    max-width: 600px;
+}
+
+.faq .item{
+    margin: 20px 0;
+}
+
+.faq .item .ask{
+    font-size: 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.faq .item .answer{
+    background: #ff0;
+    overflow: hidden;
+    display: none;
+    padding: 0 15px;
+}

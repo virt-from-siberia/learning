@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+
+.round-close {
+    border: 1px solid red;
+    border-radius: 100%;
+    background: red;
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+}
+
+.block-modal-test {
+    width: 250px;
+    height: 340px;
+    border: 1px solid black;
+    margin: 100px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-slider {
+    width: 500px;
+    height: 340px;
+    background: bisque;
+    margin-left: 0;
+    transition: all ease 1s;
+
+}
+
+.left-50 {
+    width: 50%;
+    float: left;
+    background: rgb(62, 199, 199);
+    padding: 10px;
+}
+
+.right-50 {
+    width: 50%;
+    float: right;
+    background: yellow;
+    max-height: 340px;
+    overflow-y: scroll;
+    padding: 10px;
+}
+
+.read-rules {
+    cursor: pointer;
+}

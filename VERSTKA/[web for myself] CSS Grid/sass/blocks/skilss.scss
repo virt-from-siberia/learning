@@ -1,0 +1,157 @@
+$bgSkills: orangered;
+
+.skills {
+    background-color: $bgSkills;
+    // margin-bottom: 600px;
+}
+
+.skills__wrap {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: flex;
+}
+
+.skills__left {
+    flex-basis: 280px;
+    margin-right: 115px;
+    ;
+}
+
+.skills__right {
+    flex-grow: 1;
+}
+
+.skills__title {
+    font-size: 30px;
+    font-family: 'Raleway';
+    color: $white;
+    font-weight: bold;
+    margin: 20px 0;
+    position: relative;
+    text-transform: uppercase;
+
+    &::before {
+        content: '';
+        height: 2px;
+        width: 70px;
+        position: absolute;
+        background-color: $white;
+        left: 0;
+        top: -25px;
+    }
+}
+
+.skills__text {
+    font-size: 14px;
+    color: $white;
+    line-height: 1.5;
+}
+
+.skills__button {
+    @include button($primary);
+    margin-top: 50px;
+}
+
+.skills__left {
+    margin-right: 50px;
+    margin-bottom: 25px;
+    flex-basis: 280px;
+}
+
+.skills__progress {
+    margin: 20px 0;
+}
+
+.progress__name {
+    font-size: 14px;
+    font-family: 'Raleway';
+    color: $white;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.progress__element {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 3px;
+    padding: 2px;
+}
+
+.progress__line {
+    background-color: $white;
+    width: 0%;
+    height: 4px;
+    position: relative;
+
+}
+
+.progress__tooltip {
+    background-color: $primary;
+    position: absolute;
+    right: -15px;
+    top: -32px;
+    width: 31px;
+    font-size: 11px;
+    color: $white;
+    line-height: 1.9;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 3px;
+    // display: none;
+
+    &::before {
+        content: '';
+        border: 4px solid transparent;
+        border-top: 4px solid $primary;
+        position: absolute;
+        bottom: -8px;
+        left: 40%;
+        // transform: translateX(50%);
+    }
+}
+
+
+@media(max-width: 980px) {
+
+    .skills__left {
+        margin-right: 30px;
+    }
+}
+
+@media(max-width: 768px) {
+
+    .skills__wrap {
+        flex-direction: column;
+    }
+}
+
+
+@media(max-width: 480px) {
+    .skills__wrap {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .skills__title {
+        text-align: center;
+
+        &::before {
+            content: '';
+            height: 2px;
+            width: 70px;
+            position: absolute;
+            background-color: $white;
+            left: 130px;
+            top: -25px;
+        }
+    }
+
+    .skills__text {
+        text-align: center;
+    }
+
+    .skills__button {
+        margin: 19px auto;
+    }
+}

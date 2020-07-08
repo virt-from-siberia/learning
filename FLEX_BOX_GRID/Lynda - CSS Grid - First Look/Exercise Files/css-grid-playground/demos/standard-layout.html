@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Standard three-column layout demo</title>
+    <meta name="description" content="Demo of a standard three-column layout using CSS Grid Layout Module"/>
+
+    <link rel="stylesheet" href="standard-layout.css" type="text/css" media="all">
+
+</head>
+
+<body>
+    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+    <header class="masthead">
+        <div class="site-branding">
+            <h1 class="site-title">DIY</h1>
+            <p class="site-description">A Multi-Column Demonstration</p>
+        </div><!-- .site-title -->
+
+    </header><!-- .masthead -->
+
+    <div class="site-content">
+
+        <main class="main-area">
+            <header class="article-head">
+                <h1 class="article-title">The Web-Based Garage Door Opener</h1>
+            </header><!-- .article-head -->
+
+            <section class="breakdown">
+                <div class="intro">
+                    <p>Thanks to the advances in computer technologies, we are now at a point where a computer can be the size of a credit card and cost as much as a dozen cups of coffee. As a result, we can start building computers into our everyday objects. This page outlines the parts needed for such a project: A web-enabled garage door opener.</p>
+                </div><!-- .intro -->
+                <figure class="stepimage step01-image">
+                    <img src="images/rpi.jpg">
+                    <figcaption>
+                        <p class="item-desc">1. Raspberry Pi 2B &mdash; The brains of the operation</p>
+                    </figcaption>
+                </figure><!-- .step01-image -->
+                <div class="step step01-body">
+                    <h2 class="step-title">1. Raspberry Pi 2B</h2>
+                    <p>The Raspberry Pi 2B is the brains of the operation. Running its own operating system and connected to the local wi-fi network, this mini-computer will be able to monitor the current status of the garage door (open or closed) and trigger the garage door opener when prompted to do so.</p>
+                    <p>To get it all to work, the Raspberry Pi will run a simple web server, accessible through the local network, that provides a website displaying the status of the garage door and a button to open or close the door.</p>
+                </div><!-- .step -->
+
+                <figure class="stepimage step02-image">
+                    <img src="images/sd.jpg">
+                    <figcaption>
+                        <p class="item-desc">2. Micro SD card to hold custom software</p>
+                    </figcaption>
+                </figure><!-- .step01-image -->
+                <div class="step step02-body">
+                    <h2 class="step-title">2. Micro SD Card</h2>
+                    <p>No computer is complete without read/write storage capability. On the Raspberry Pi, that storage comes in the form of a Micro SD card. The size of a finger nail, this card can carry both the Raspberry Pi's operating system + a web server application and the custom code neccessary to control the garage door.</p>
+                </div><!-- .step -->
+
+                <figure class="stepimage step03-image">
+                    <img src="images/relay.jpg">
+                    <figcaption>
+                        <p class="item-desc">3. 2-channel 5V relay</p>
+                    </figcaption>
+                </figure><!-- .step01-image -->
+                <div class="step step03-body">
+                    <h2 class="step-title">3. 2-Channel 5V Relay</h2>
+                    <p>The beauty of the Raspberry Pi is it's input/output ports that can be used to control external devices. In this project, these ports will be used to sense the current status of the door and to toggle the garage door opener to open or close the door.</p>
+                    <p>The 2-channel 5V relay is the interface between the Raspberry Pi and the garage door opener itself. It takes a trigger signal from the Rapsberry Pi, converts it to a 5V signal, and sends that to the garaga door opener to trigger it to either open or close the door.</p>
+                    <p>For this project, only one of the two channels on the relay will be used.</p>
+                </div><!-- .step -->
+
+                <figure class="stepimage step04-image">
+                    <img src="images/sensor.jpg">
+                    <figcaption>
+                        <p class="item-desc">4. Magnetic door sensor</p>
+                    </figcaption>
+                </figure><!-- .step01-image -->
+                <div class="step step04-body">
+                    <h2 class="step-title">4. Magnetic Door Sensor</h2>
+                    <p>Having a remote web-enabled garage door opener is more or less meaningless unless you can know, without looking, whether the garage door is open or closed.</p>
+                    <p>To sense the status of the garage door, a magnetic door sensor is used. The sensor consists of a magnet (the thin part) and the sensor itself. Inside the sensor, a circuit is completed when the magnet is close by. In other words, when the cirtuit is closed, the door is closed.</p>
+                </div><!-- .step -->
+
+                <figure class="stepimage step05-image">
+                    <img src="images/jumpers.jpg">
+                    <figcaption>
+                        <p class="item-desc">5. Female-to-female and male-to-male jumper cables</p>
+                    </figcaption>
+                </figure><!-- .step01-image -->
+                <div class="step step05-body">
+                    <h2 class="step-title">5. Jumper Cables</h2>
+                    <p>To connect the Raspberry Pi to the 5V relay and to perform experimentation and beta-testing, jumper cables are required. These cables can connect pins to each other (female-to-female) and make connections inside a breadboard for easy experimentation.</p>
+                    <p>When complete, the project will likely use four female-to-female jumper cables: Two connected to the relay, and two connected to the door sensor.</p>
+                </div><!-- .step -->
+
+                <figure class="stepimage step06-image">
+                    <img src="images/breadboard.jpg">
+                    <figcaption>
+                        <p class="item-desc">6. Breadboard</p>
+                    </figcaption>
+                </figure><!-- .step01-image -->
+                <div class="step step06-body">
+                    <h2 class="step-title">6. Breadboard</h2>
+                    <p>The breadboard is a staple of electronics experimentation. In combination with jumper cables and other electronic units, the breadboard can be used to experiment with different types of circuits in a simple and accessible way before a final circuit and wiring plan is established.</p>
+                    <p>In this project, the breadboard will only be used during the setup phase. Once complete, the breadboard will be replaced by permanent circuits and reused for other projects.</p>
+                </div><!-- .step -->
+            </section><!-- .breakdown -->
+
+        </main><!-- .main-area -->
+
+        <footer class="footer-area">
+            <h3>Disclaimer</h3>
+            <p>None of the information in this article should be taken at face value. It is purely for display purposes to provide a realistic scenario for the use of the CSS Grid Layout Module.</p>
+            <h3>Relevant Links</h3>
+            <ul>
+                <li><a href="https://www.raspberrypi.org/" target="_none">Raspberry Pi</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Secure_Digital" target="_none">Secure Digital (SD) Cards</a></li>
+                <li><a href="https://www.adafruit.com/products/375" target="_none">Magnetic door sensor</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Relay" target="_none">More on relays</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Breadboard" target="_none">More on breadboards</a></li>
+            </ul>
+        </footer>
+
+        <aside class="promo-area">
+            <a href="#">
+                <figure class="promo-banner">
+                    <img src="images/promo-dummy.png">
+                    <figcaption>
+                        <blockquote>
+                            &ldquo;CSS Grid Layout Module will change the way we think about web layouts forever!&rdquo;
+                        </blockquote>
+                        <h3>Get In Now!</h3>
+                        <p>Available in browsers soon!</p>
+                    </figcaption>
+                </figure>
+            </a>
+        </aside>
+
+    </div><!-- .site-content -->
+
+    <footer class="site-footer">
+        <p>All content and photos by Morten Rand-Hendriksen.</p>
+    </footer>
+
+</body>
+
+</html>

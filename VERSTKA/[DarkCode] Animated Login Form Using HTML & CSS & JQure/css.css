@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: montserrat;
+}
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(to right top, #0568fc, #0086ff, #18a1ff, #58baff, #8bd1ff);
+}
+
+
+.login-form {
+    width: 360px;
+    background-image: linear-gradient(to right top, #0568fc, #7c5df7, #b34eec, #dd38db, #ff11c5);
+    /* background: #fff; */
+
+    height: 380px;
+    padding: 80px 40px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-form h1 {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+
+.textb {
+    border-bottom: 1px solid #adadad;
+    position: relative;
+    margin: 30px 0;
+}
+
+.textb input {
+    font-size: 25px;
+    color: rgb(238, 237, 237);
+    border: none;
+    width: 100%;
+    outline: none;
+    background: none;
+    padding: 0 5px;
+    height: 40px;
+}
+
+.textb span::before {
+    content: attr(data-placeholder);
+    position: absolute;
+    top: 30%;
+    left: 5px;
+    color: #adadad;
+    font-size: 15px;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.textb span::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 1.5px;
+    /* background: yellow; */
+    background: linear-gradient(to right, #00c3ff, #ffff1c);
+    transition: 0.5s;
+}
+
+.focus+span::before {
+    top: -10px;
+}
+
+.focus+span::after {
+    width: 100%;
+}
+
+.check+span::after {
+    background: rgb(255, 0, 0) !important;
+}

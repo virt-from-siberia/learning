@@ -1,0 +1,12 @@
+.go_loading {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url('img/ajax-loader.gif');
+    background-size: cover;
+    /* background: red; */
+}
+
+.app span {
+    color: red;
+}

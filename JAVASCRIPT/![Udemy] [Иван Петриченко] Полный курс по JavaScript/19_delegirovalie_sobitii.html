@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+         .border{
+             width: 350px;
+             height: 350px;
+             border: 5px solid red;
+         }
+         .box{
+             position: relative;
+             width: 50px;
+             height: 50px;
+             background: blue;
+         }
+         .btn-block{
+             background: grey;
+             padding: 30px;
+         }
+         .btn-block button{
+             margin: 5px;
+             width: 100px;
+             height: 50px;
+             background: orange;
+         }
+    </style>
+</head>
+<body>
+
+    <button class="btn">animate</button>
+    <button class="btn_stop">stop animation</button>
+    <div class="border">
+        <div class="box"></div>
+    </div>
+    <div class="btn-block">
+        <button class="first"></button>
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+    </div>
+
+    <div id="menu">
+        <button data-action="save">Сохранить</button>
+        <button data-action="load">Загрузить</button>
+        <button data-action="search">Поиск</button>
+    </div>
+    
+    <script src="19_delegirovalie_sobitii.js"></script>
+</body>
+</html>

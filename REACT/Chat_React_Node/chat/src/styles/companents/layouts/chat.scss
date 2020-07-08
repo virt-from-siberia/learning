@@ -1,0 +1,107 @@
+.chat {
+    background: #fff;
+    width: 1140px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.22);
+    display: flex;
+    height: 100%;
+
+    &__sidebar {
+        width: 320px;
+        border-right: 1px solid #f7f7f7;
+
+        span {
+            font-size: 16px;
+            opacity: 0.5;
+            transition: 0.3s;
+
+            &:hover {
+                cursor: pointer;
+                opacity: 1;
+            }
+        }
+
+        &-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+
+            & > div {
+                .user-img {
+                    display: inline-block;
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        &-dialogs {
+            height: calc(100% - 123px);
+
+            .dialogs {
+                height: 100%;
+                overflow: auto;
+            }
+        }
+    }
+
+    &__dialog {
+        flex: 1;
+        height: auto;
+        // overflow: auto;
+        position: relative;
+
+        .ant-empty {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .message__avatar {
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+
+        &-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 20px;
+            border-bottom: 1px solid #f7f7f7;
+
+            span {
+                svg {
+                    opacity: 0.5;
+                    font-size: 22px;
+                    transition: 0.3s;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        // &-messages {
+        //     padding: 20px;
+        //     overflow: auto;
+        //     padding-bottom: 0;
+        //     height: calc(100% - 138px) !important;
+        // }
+        &-messages {
+            height: calc(100% - 138px) !important;
+        }
+        &-username {
+            font-weight: bold;
+            color: #00c980;
+        }
+    }
+}

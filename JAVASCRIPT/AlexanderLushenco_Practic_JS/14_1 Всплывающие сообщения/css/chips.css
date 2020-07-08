@@ -1,0 +1,8 @@
+.chips {
+    padding: 10px 20px;
+    margin: 20px 10px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: inline-block;
+}

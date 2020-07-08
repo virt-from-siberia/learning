@@ -1,0 +1,88 @@
+.header {
+    background-color: rgb(202, 0, 81);
+    box-shadow: 0px 3px 0px 0px rgba(153, 61, 0.8);
+    padding: 10px 0;
+}
+
+.header__wrap {
+    display: grid;
+    grid-template-columns: 165px auto 165px;
+    grid-template-rows: minmax(55px auto);
+    grid-column-gap: 10px;
+    align-items: center;
+}
+
+.header__person a {
+    font-size: 18px;
+    color: white;
+    line-height: 1.2;
+    text-decoration: none;
+    padding: 5px 0 5px 45px;
+    display: block;
+    position: relative;
+}
+
+.header__person a:hover {
+    text-decoration: underline;
+}
+
+.header__person a:before {
+    width: 38px;
+    height: 27px;
+    background: url('../../img/person.png') left center no-repeat;
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.header__logo {
+    justify-self: center;
+}
+
+.header__logo img {
+    display: block;
+    margin: 0 auto;
+}
+
+.header__email a {
+    width: 38px;
+    height: 28px;
+    background: url('../../img/mail.png') no-repeat;
+    display: block;
+    margin-left: auto;
+}
+
+.header__email {
+    justify-self: end;
+}
+
+@media(max-width: 990px) {
+    .header__person {
+        margin-left: 0;
+    }
+
+    .header__email {
+        margin-right: 0;
+    }
+}
+
+@media(max-width: 580px) {
+    .header__wrap {
+        grid-template-columns: 140px auto 140px;
+        grid-template-rows: minmax(55px auto);
+        grid-column-gap: 5px;
+    }
+
+    .header__logo {
+        grid-column: 1/-1;
+        grid-row: 1/2;
+    }
+
+    .header__email {
+        grid-column: 3/4;
+    }
+}
