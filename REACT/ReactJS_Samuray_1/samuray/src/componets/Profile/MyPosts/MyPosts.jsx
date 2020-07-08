@@ -1,23 +1,26 @@
 import React from "react";
 import Post from "./Post//Post";
+import {
+  addPostActionCreator,
+  updateNewPostTextActionCreator,
+} from "../../../redux/state";
+
 import classes from "./MyPosts.module.css";
 
-const MyPosts = ({ posts, addPost, updateNewPostText, newPostText }) => {
-  const postsElements = posts.map((p) => {
+const MyPosts = (props) => {
+  const postsElements = props.posts.map((p) => {
     return <Post message={p.message} likesCount={p.likesCount} key={p.id} />;
   });
 
   const newPostElement = React.createRef();
 
-  let addNewPost = () => {
-    let text = newPostElement.current.value;
-    addPost(text);
-    newPostElement.current.value = "";
+  let addPost = () => {
+    props.dispatch(addPostActionCreator());
   };
 
-  let onPostChange = (evt) => {
-    updateNewPostText(evt.target.value);
-    newPostElement.current.value = "";
+  let onPostChange = () => {
+    let text = newPostElement.current.value;
+    props.dispatch(updateNewPostTextActionCreator(text));
   };
 
   return (
@@ -28,11 +31,11 @@ const MyPosts = ({ posts, addPost, updateNewPostText, newPostText }) => {
           <textarea
             onChange={onPostChange}
             ref={newPostElement}
-            value={newPostText}
+            value={props.newPostText}
           ></textarea>
         </div>
         <div>
-          <button onClick={addNewPost}>Add post</button>
+          <button onClick={addPost}>Add post</button>
           <button>Remove</button>
         </div>
       </div>

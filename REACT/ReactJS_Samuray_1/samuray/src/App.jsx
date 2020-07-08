@@ -8,12 +8,6 @@ import Dialogs from "./componets/Dialogs/Dialogs";
 import "./App.css";
 
 const App = (props) => {
-  console.log(props);
-
-  const { state } = props;
-  const { addPost, updateNewPostText } = props;
-  const { profilePage, messagesPage } = state;
-
   return (
     <div className='app-wrapper'>
       <Header />
@@ -21,15 +15,14 @@ const App = (props) => {
       <div className='app-wrapper-content'>
         <Route
           path='/dialogs'
-          render={() => <Dialogs state={messagesPage} />}
+          render={() => <Dialogs state={props.state.messagesPage} />}
         />
         <Route
           path='/profile'
           render={() => (
             <Profile
-              profilePage={profilePage}
-              addPost={addPost}
-              updateNewPostText={updateNewPostText}
+              profilePage={props.state.profilePage}
+              dispatch={props.dispatch}
             />
           )}
         />
