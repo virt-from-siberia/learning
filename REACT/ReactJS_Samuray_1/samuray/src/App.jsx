@@ -9,16 +9,13 @@ import "./App.css";
 
 const App = (props) => {
   return (
-    <div className='app-wrapper'>
+    <div className="app-wrapper">
       <Header />
       <Navbar />
-      <div className='app-wrapper-content'>
+      <div className="app-wrapper-content">
+        <Route path="/dialogs" render={() => <Dialogs store={props.store} />} />
         <Route
-          path='/dialogs'
-          render={() => <Dialogs state={props.state.messagesPage} />}
-        />
-        <Route
-          path='/profile'
+          path="/profile"
           render={() => (
             <Profile
               profilePage={props.state.profilePage}
