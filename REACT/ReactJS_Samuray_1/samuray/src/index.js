@@ -1,25 +1,19 @@
 import React from "react";
+import store from "./redux/reduxStore";
 import ReactDOM from "react-dom";
 import App from "./App";
-// import { addPost } from "./redux/state";
-// import { updateNewPostText } from "./redux/state";
+import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
-// import { subscribe } from "./redux/state";
-import store from "./redux/state";
 
 import "./index.css";
 
-let rerenderEntireTree = () => {
-  ReactDOM.render(
-    <Router>
-      <React.StrictMode>
-        <App state={store.getState()} dispatch={store.dispatch.bind(store)} store={store} />
-      </React.StrictMode>
-    </Router>,
-    document.getElementById("root")
-  );
-};
-
-rerenderEntireTree(store.getState);
-
-store.subscribe(rerenderEntireTree);
+ReactDOM.render(
+  <Router>
+    <React.StrictMode>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </React.StrictMode>
+  </Router>,
+  document.getElementById("root")
+);

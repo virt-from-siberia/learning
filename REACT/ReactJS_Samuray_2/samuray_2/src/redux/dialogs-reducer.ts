@@ -1,51 +1,60 @@
-const SEND_MESSAGE = 'SEND_MESSAGE';
+import { InferActionsTypes } from "./redux-store";
 
 type DialogType = {
-    id : number,
-    name : string
-}
+  id: number;
+  name: string;
+};
 type MessageType = {
-    id : number,
-    message : string
-}
-let initialState = {
-    dialogs: [
-        {id: 1, name: 'Dimych'},
-        {id: 2, name: 'Andrew'},
-        {id: 3, name: 'Sveta'},
-        {id: 4, name: 'Sasha'},
-        {id: 5, name: 'Viktor'},
-        {id: 6, name: 'Valera'}
-    ] as Array<DialogType>,
-    messages: [
-        {id: 1, message: 'Hi'},
-        {id: 2, message: 'How is your it-kamasutra?'},
-        {id: 3, message: 'Yo'},
-        {id: 4, message: 'Yo'},
-        {id: 5, message: 'Yo'}
-    ] as Array<MessageType>
+  id: number;
+  message: string;
 };
 
-export type  InitionStateType = typeof initialState
+const initialState = {
+  dialogs: [
+    { id: 1, name: "Dimych" },
+    { id: 2, name: "Andrew" },
+    { id: 3, name: "Sveta" },
+    { id: 4, name: "Sasha" },
+    { id: 5, name: "Viktor" },
+    { id: 5, name: "Viktor" },
+    { id: 6, name: "Valera" }
+  ] as Array<DialogType>,
+  messages: [
+    { id: 1, message: "Hi" },
+    { id: 2, message: "How is your it-kamasutra?" },
+    { id: 3, message: "Yo" },
+    { id: 4, message: "Yo" },
+    { id: 5, message: "Yo" }
+  ] as Array<MessageType>
+};
 
-const dialogsReducer = (state = initialState, action : any) : InitionStateType => {
-    switch (action.type) {
-        case SEND_MESSAGE:
-            let body = action.newMessageBody;
-            return {
-                ...state,
-                messages: [...state.messages, {id: 6, message: body}]
-            };
-        default:
-            return state;
-    }
-}
 
-type SendMessageCreatorActionType = {
-    type : typeof SEND_MESSAGE
-    newMessageBody : string
-}
-export const sendMessageCreator = (newMessageBody : string): SendMessageCreatorActionType => ({type: SEND_MESSAGE, newMessageBody})
 
+export const dialogsReducer = (
+  state = initialState,
+  action: ActionsType
+): InitialStateType => {
+  switch (action.type) {
+    case "SN/SEND_MESSAGE":
+      const body = action.newMessageBody;
+      return {
+        ...state,
+        messages: [...state.messages, { id: 6, message: body }]
+      };
+    default:
+      return state;
+  }
+};
+
+export const actions = {
+  sendMessage: (newMessageBody: string) =>
+    ({
+      type: "SN/SEND_MESSAGE",
+      newMessageBody
+    } as const)
+};
+
+export type InitialStateType = typeof initialState;
+type ActionsType = InferActionsTypes<typeof actions>;
 
 export default dialogsReducer;

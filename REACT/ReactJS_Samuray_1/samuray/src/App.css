@@ -1,3 +1,6 @@
+body {
+  background: url("./img/body-pattern.gif");
+}
 .App {
   text-align: center;
 }

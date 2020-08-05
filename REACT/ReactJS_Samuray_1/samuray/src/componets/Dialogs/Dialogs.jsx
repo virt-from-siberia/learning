@@ -1,17 +1,12 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
+import { Redirect } from "react-router-dom";
+
 import classes from "./Dialogs.module.css";
-import {
-  sendMessageCreator,
-  updateNewMessageBodyCreator,
-} from "../../redux/state";
 
 const Dialogs = (props) => {
-  let state = props.store.getState().messagesPage;
-
-  console.log(state);
+  let state = props.messagesPage;
 
   let dialogsElemets = state.dialogs.map((d) => (
     <DialogItem name={d.name} id={d.id} key={d.id} />
@@ -19,20 +14,22 @@ const Dialogs = (props) => {
 
   console.log(state.messages);
 
-  let messagesElement = state.messages.map(
-    (m) => console.log(m) || <Message message={m.message} key={m.id} />
-  );
+  let messagesElement = state.messages.map((m) => (
+    <Message message={m.message} key={m.id} />
+  ));
 
   let newMessageBody = state.newMessageBody;
 
   let onSendMessageClick = () => {
-    props.store.dispatch(sendMessageCreator());
+    props.sendMessage();
   };
 
   let onNewMessageChange = (evt) => {
     let body = evt.target.value;
-    props.store.dispatch(updateNewMessageBodyCreator(body));
+    props.updateNewMessageBody(body);
   };
+
+  if (props.isAuth === true) return <Redirect to={"/login"} />;
 
   return (
     <div className={classes.dialogs}>
@@ -44,7 +41,7 @@ const Dialogs = (props) => {
           <div>
             <textarea
               value={newMessageBody}
-              plcaholder="Enter your message"
+              plcaholder='Enter your message'
               onChange={onNewMessageChange}
             ></textarea>
           </div>
