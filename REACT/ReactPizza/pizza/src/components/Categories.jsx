@@ -9,7 +9,7 @@ const Categories = React.memo(function Categories({ items, onClickItem }) {
   };
 
   return (
-    <div className="categories">
+    <div className='categories'>
       <ul>
         <li
           className={activeItem === null ? "active" : ""}

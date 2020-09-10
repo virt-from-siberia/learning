@@ -11,17 +11,17 @@ function App() {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    axios.get("http://localhost:3000/db.json").then(({ data }) => {
-      dispatch(setPizzas(data.pizzas));
+    axios.get("http://localhost:3001/pizzas").then(({ data }) => {
+      dispatch(setPizzas(data));
     });
   }, []);
 
   return (
-    <div className="wrapper">
+    <div className='wrapper'>
       <Header />
-      <div className="content">
-        <Route path="/" component={Home} exact />
-        <Route path="/cart" component={Cart} exact />
+      <div className='content'>
+        <Route path='/' component={Home} exact />
+        <Route path='/cart' component={Cart} exact />
       </div>
     </div>
   );
