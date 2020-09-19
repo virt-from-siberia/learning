@@ -1,9 +1,0 @@
-{
-  "private": true,
-  "dependencies": {
-    "effector": "^20.11.5",
-    "effector-dom": "0.0.10",
-    "todomvc-app-css": "^2.3.0",
-    "todomvc-common": "^1.0.0"
-  }
-}
