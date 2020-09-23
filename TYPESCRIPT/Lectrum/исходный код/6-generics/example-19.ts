@@ -23,7 +23,7 @@
         return new c();
     };
 
-    createInstance(Lion).keeper.tag;  // typechecks!
+    createInstance (Lion).keeper.tag;  // typechecks!
     createInstance(Bee).keeper.hasMask;   // typechecks!
     createInstance(BeeKeeper).keeper.hasMask
 }

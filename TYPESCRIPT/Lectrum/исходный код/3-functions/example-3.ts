@@ -1,7 +1,6 @@
 type f = (baseValue: number, increment: number) => number;
 
-let increase
-  = <f>function increase(x: number, y: number): number {
+let increase = <f>function increase(x, y) {
   return x + y;
 };
 

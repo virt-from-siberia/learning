@@ -3,6 +3,5 @@
         console.log(arg.length);
         return arg;
     };
-
-    readLength([1,2,3]);
+    readLength<number>([1,2,3]);
 }

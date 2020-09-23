@@ -4,6 +4,5 @@
     };
 
     const text = returnAny('str');
-
     console.log(text);
 }

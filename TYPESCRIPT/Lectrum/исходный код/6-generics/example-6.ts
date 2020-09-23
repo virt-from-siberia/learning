@@ -5,6 +5,9 @@
         if(n instanceof Number) {
             console.log(n.toFixed());
         }
+        if(n instanceof Array ){
+            console.log(n.length);
+        }
         return arg;
     };
 
