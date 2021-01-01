@@ -21,6 +21,7 @@ import {
   toggleTodoActionCreator,
   deleteTodoActionCreator,
   selectTodoActionCreator,
+  getUsers,
 } from "../redux-toolkit";
 
 import { State } from "../type";
@@ -53,6 +54,8 @@ const App: React.FC = function() {
   const handleCreateNewTodo = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     if (!newTodoInput.length) return;
+
+    dispatch(getUsers(5));
 
     dispatch(createTodoActionCreator({ desc: newTodoInput }));
     setNewTodoInput("");

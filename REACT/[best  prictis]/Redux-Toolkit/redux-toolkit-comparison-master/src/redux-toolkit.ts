@@ -1,4 +1,4 @@
-import { combineReducers, configureStore, createSlice, PayloadAction, getDefaultMiddleware } from '@reduxjs/toolkit'
+import { combineReducers, configureStore, createSlice, PayloadAction, getDefaultMiddleware, Dispatch, createAsyncThunk } from '@reduxjs/toolkit'
 import { v1 as uuid } from "uuid";
 import logger from 'redux-logger'
 
@@ -60,6 +60,7 @@ const todosSlice = createSlice({
     }
 })
 
+
 const selectedTodoSlice = createSlice({
     name: 'selectedTodo',
     initialState: null as string | null,
@@ -67,6 +68,46 @@ const selectedTodoSlice = createSlice({
         select: (state, { payload }: PayloadAction<{ id: string }>) => payload.id
     }
 })
+
+
+export const getUsers = createAsyncThunk(
+    'users/fetchById',
+    (userId: number) => {
+        return fetch(`https://reeeeeeqres.in/api/users/${userId}`).then(response => {
+            return response.json()
+        })
+    }
+)
+
+
+// Then, handle actions in your reducers:
+const usersSlice = createSlice({
+    name: 'users',
+    initialState: {
+        success: false,
+        loading: false,
+        error: false,
+        data: []
+    },
+    reducers: {
+    },
+    extraReducers: {
+        [getUsers.pending.toString()]: state => {
+            state.loading = true
+        },
+        [getUsers.rejected.toString()]: (state, action) => {
+            state.loading = false;
+            state.error = true;
+        },
+        [getUsers.fulfilled.toString()]: (state, { payload }) => {
+            state.success = true;
+            state.loading = false;
+            state.data = payload.data
+        },
+    },
+})
+
+
 
 const counterSlice = createSlice({
     name: 'counter',
@@ -80,6 +121,7 @@ const counterSlice = createSlice({
         [todosSlice.actions.remove.type]: state => state + 1,
     }
 })
+
 
 export const {
     create: createTodoActionCreator,
@@ -96,6 +138,7 @@ const reducer = combineReducers({
     todos: todosSlice.reducer,
     selectedTodo: selectedTodoSlice.reducer,
     counter: counterSlice.reducer,
+    users: usersSlice.reducer
 })
 
 const middleware = [...getDefaultMiddleware(), logger]
@@ -103,5 +146,4 @@ const middleware = [...getDefaultMiddleware(), logger]
 export default configureStore({
     reducer,
     middleware,
-    // devTools: process.env.NODE_ENV !== 'production'
 })
