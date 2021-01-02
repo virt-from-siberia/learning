@@ -1,0 +1,9 @@
+{
+  "name": "a11y-dialog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "a11y-dialog": "^5.2.0"
+  }
+}

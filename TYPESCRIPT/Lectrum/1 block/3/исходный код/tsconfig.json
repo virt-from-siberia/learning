@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "strict": true,
+    "experimentalDecorators": true
+  }
+}

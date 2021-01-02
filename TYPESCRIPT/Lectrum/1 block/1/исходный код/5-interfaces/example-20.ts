@@ -16,8 +16,8 @@
     }
 
 // Error: Property 'state' is missing in type 'Image'.
-//     class Image implements SelectableControl {
-//         private state: any;
-//         select() { }
-//     }
+    class Image implements SelectableControl {
+        private state: any;
+        select() { }
+    }
 }

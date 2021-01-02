@@ -10,6 +10,6 @@
     // };
     const t: Array<string> = ['sd'];
     t.map()
-    let obj: NumberDictionary = [1,2];
+    let obj: NumberDictionary = [1, 2];
     obj.map()
-}
+}   
