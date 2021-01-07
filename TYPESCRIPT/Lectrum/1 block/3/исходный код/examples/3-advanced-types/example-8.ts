@@ -1,15 +1,15 @@
 {
     interface Bird {
-        fly():void;
+        fly(): void;
         name: string
     }
 
     interface Fish {
-        swim():void;
+        swim(): void;
         name: string
     }
 
-    const getSmallPet = function(): Fish | Bird {
+    const getSmallPet = function (): Fish | Bird {
         return {
             name: 'oliver',
             swim() {
@@ -18,7 +18,7 @@
         }
     };
 
-    const isFish = function(pet: Fish | Bird): pet is Fish {
+    const isFish = (pet: Fish | Bird): pet is Fish => {
         return (<Fish>pet).swim !== void 0;
     };
 

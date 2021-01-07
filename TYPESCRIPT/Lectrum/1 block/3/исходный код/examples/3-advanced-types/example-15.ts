@@ -17,9 +17,9 @@
 
     type Shape = Square | Rectangle | Circle;
 
-    const area = function(s: Shape): number {
+    const area = function (s: Shape): number {
         let result;
-        
+
         switch (s.kind) {
             case 'square':
                 result = s.size * s.size;
@@ -33,7 +33,7 @@
             default:
                 result = NaN;
         }
-        
+
         return result;
     }
 }

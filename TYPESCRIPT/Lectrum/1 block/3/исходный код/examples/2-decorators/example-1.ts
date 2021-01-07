@@ -1,6 +1,6 @@
 // Decorator
 {
-    const sealed = function(target: Function) {
+    const sealed = function (target: Function) {
         // do something with 'target' ...
     }
-}
+}  

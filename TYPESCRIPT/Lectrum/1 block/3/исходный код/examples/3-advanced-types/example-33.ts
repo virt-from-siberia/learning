@@ -7,10 +7,10 @@ interface IFeline {
 }
 
 interface ICat extends Pet, IFeline {
-    
+
 }
 
-let cat:ICat;
+let cat: ICat;
 
 // Both methods and properties are available
 // cat.nightvision

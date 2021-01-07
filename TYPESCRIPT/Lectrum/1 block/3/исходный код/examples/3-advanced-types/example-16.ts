@@ -20,13 +20,13 @@
         size: number;
     }
 
-    const generateError = function(x: never): never {
+    const generateError = function (x: never): never {
         throw new Error('Unexpected object: ' + x);
     };
 
     type allowedShapes = Square | Rectangle | Circle | myShape;
 
-    const area = function(s: allowedShapes): number {
+    const area = function (s: allowedShapes): number {
         let result;
 
         switch (s.kind) {
@@ -39,9 +39,9 @@
             case 'circle':
                 result = Math.PI * s.radius ** 2;
                 break;
-            // case 'myShape':
-            //     result = s.size;
-            //     break;
+            case 'myShape':
+                result = s.size;
+                break;
             default:
                 generateError(s);
                 result = NaN;

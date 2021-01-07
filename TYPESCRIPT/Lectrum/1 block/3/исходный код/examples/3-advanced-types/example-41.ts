@@ -17,12 +17,12 @@ const response = service.getData();
 
 if (typeof response === 'string') {
     console.log(response.toUpperCase());
-} else if(isComment(response)) {
+} else if (isComment(response)) {
     console.log(response.date);
     console.log(response.message);
 }
 
-function isComment(type: any): type is IComment {
+function isComment(type: unknown): type is IComment {
     return (<IComment>type).message !== undefined
         && (<IComment>type).date !== undefined;
 }
