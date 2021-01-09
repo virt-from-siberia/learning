@@ -42,7 +42,6 @@ export type StarshipsFetchAsyncAction = {
     type: typeof STARSHIPS_FETCH_ASYNC
 }
 
-
 export type StarshipsActionTypes =
     | StarshipsStartFetchingAction
     | StarshipsStopFetchingAction
