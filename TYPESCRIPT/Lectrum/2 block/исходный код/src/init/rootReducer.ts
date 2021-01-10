@@ -2,7 +2,7 @@
 import { combineReducers } from 'redux';
 
 // Reducers
-import { starshipsReducer as starships } from '../bus/starships/reducer';
+import { starshpsReducer as starships } from '../bus/starships/reducer';
 
 export const rootReducer = combineReducers({
     starships,

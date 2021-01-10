@@ -6,9 +6,7 @@ import { Starship } from "./types";
 export const Starships: FC = () => {
   const { isFetching, data, error } = useStarshipsFetch();
 
-  const errorMessageJSX = typeof error === "object" && error.status === 404 && (
-    <p>Not Found!</p>
-  );
+  const errorMessageJSX = error && <p>Not Found!</p>;
 
   const loaderJSX = isFetching && <p>Loading data from API ...</p>;
 

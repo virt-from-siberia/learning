@@ -1,6 +1,5 @@
 // Core
 import { createStore, applyMiddleware } from 'redux';
-// eslint-disable-next-line import/no-unresolved
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 
 // Instruments

@@ -6,9 +6,7 @@ export type Starships = {
     results: Starship[]
 }
 
-export type ErrorHttpAction = {
-    status: number
-}
+export type ErrorHttpAction = string
 
 //Sync
 
