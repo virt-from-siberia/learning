@@ -1,0 +1,13 @@
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Loops\Loops\bin\Debug\netcoreapp3.1\Loops.exe
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Loops\Loops\bin\Debug\netcoreapp3.1\Loops.deps.json
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Loops\Loops\bin\Debug\netcoreapp3.1\Loops.runtimeconfig.json
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Loops\Loops\bin\Debug\netcoreapp3.1\Loops.runtimeconfig.dev.json
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Loops\Loops\bin\Debug\netcoreapp3.1\Loops.dll
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Loops\Loops\bin\Debug\netcoreapp3.1\Loops.pdb
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Loops\Loops\obj\Debug\netcoreapp3.1\Loops.AssemblyInfoInputs.cache
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Loops\Loops\obj\Debug\netcoreapp3.1\Loops.AssemblyInfo.cs
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Loops\Loops\obj\Debug\netcoreapp3.1\Loops.csproj.CoreCompileInputs.cache
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Loops\Loops\obj\Debug\netcoreapp3.1\Loops.dll
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Loops\Loops\obj\Debug\netcoreapp3.1\Loops.pdb
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Loops\Loops\obj\Debug\netcoreapp3.1\Loops.genruntimeconfig.cache
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Loops\Loops\obj\Debug\netcoreapp3.1\Loops.csprojAssemblyReference.cache

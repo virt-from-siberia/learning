@@ -5,12 +5,12 @@ import { startFetching, stopFetching, fill, setFetchingError } from '../../actio
 import { Starships } from '../../types';
 
 //Workers
-import { makeRequestWithSpinner } from '../../../../workers'
+import { makeRequestWithSpiner } from '../../../../workers'
 
 //Api
 import { api } from '../../../../api'
 
-export function* fetchStarships() {
+export function* fetchStarships(): Generator {
     const options = {
         fetcher: api.starships.fetch,
         startFetching,
@@ -18,5 +18,5 @@ export function* fetchStarships() {
         fill,
         setErrorAction: setFetchingError
     };
-    yield makeRequestWithSpinner<Starships>(options)
+    yield makeRequestWithSpiner<Starships>(options)
 }

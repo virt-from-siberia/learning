@@ -1,0 +1,17 @@
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\lesson2\Collections\bin\Debug\netcoreapp3.1\Tetris.exe
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\lesson2\Collections\bin\Debug\netcoreapp3.1\Collections.exe
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\lesson2\Collections\bin\Debug\netcoreapp3.1\Collections.deps.json
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\lesson2\Collections\bin\Debug\netcoreapp3.1\Collections.runtimeconfig.json
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\lesson2\Collections\bin\Debug\netcoreapp3.1\Collections.runtimeconfig.dev.json
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\lesson2\Collections\bin\Debug\netcoreapp3.1\Collections.dll
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\lesson2\Collections\bin\Debug\netcoreapp3.1\Collections.pdb
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\lesson2\Collections\bin\Debug\netcoreapp3.1\Tetris.dll
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\lesson2\Collections\bin\Debug\netcoreapp3.1\Tetris.pdb
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\lesson2\Collections\obj\Debug\netcoreapp3.1\Collections.csprojAssemblyReference.cache
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\lesson2\Collections\obj\Debug\netcoreapp3.1\Collections.AssemblyInfoInputs.cache
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\lesson2\Collections\obj\Debug\netcoreapp3.1\Collections.AssemblyInfo.cs
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\lesson2\Collections\obj\Debug\netcoreapp3.1\Collections.csproj.CoreCompileInputs.cache
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\lesson2\Collections\obj\Debug\netcoreapp3.1\Collections.csproj.CopyComplete
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\lesson2\Collections\obj\Debug\netcoreapp3.1\Collections.dll
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\lesson2\Collections\obj\Debug\netcoreapp3.1\Collections.pdb
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\lesson2\Collections\obj\Debug\netcoreapp3.1\Collections.genruntimeconfig.cache

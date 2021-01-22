@@ -15,4 +15,4 @@ export function Component5<T>({ items, children }: PropTypes<T>) {
   );
 }
 
-<Component5 items={[]}>{(item: T) => <p>{item}</p>}</Component5>;
+<Component5 items={[]}>{(item) => <p>{item}</p>}</Component5>;

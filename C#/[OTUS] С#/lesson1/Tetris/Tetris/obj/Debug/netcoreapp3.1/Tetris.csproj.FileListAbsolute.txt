@@ -1,0 +1,13 @@
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Tetris\Tetris\bin\Debug\netcoreapp3.1\Tetris.exe
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Tetris\Tetris\bin\Debug\netcoreapp3.1\Tetris.deps.json
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Tetris\Tetris\bin\Debug\netcoreapp3.1\Tetris.runtimeconfig.json
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Tetris\Tetris\bin\Debug\netcoreapp3.1\Tetris.runtimeconfig.dev.json
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Tetris\Tetris\bin\Debug\netcoreapp3.1\Tetris.dll
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Tetris\Tetris\bin\Debug\netcoreapp3.1\Tetris.pdb
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Tetris\Tetris\obj\Debug\netcoreapp3.1\Tetris.csprojAssemblyReference.cache
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Tetris\Tetris\obj\Debug\netcoreapp3.1\Tetris.AssemblyInfoInputs.cache
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Tetris\Tetris\obj\Debug\netcoreapp3.1\Tetris.AssemblyInfo.cs
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Tetris\Tetris\obj\Debug\netcoreapp3.1\Tetris.csproj.CoreCompileInputs.cache
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Tetris\Tetris\obj\Debug\netcoreapp3.1\Tetris.dll
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Tetris\Tetris\obj\Debug\netcoreapp3.1\Tetris.pdb
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\[OTUS] С#\Tetris\Tetris\obj\Debug\netcoreapp3.1\Tetris.genruntimeconfig.cache

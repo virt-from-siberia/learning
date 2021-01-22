@@ -1,0 +1,13 @@
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\Программирование на С# для начинающих\fitsr\FirstProgramm\bin\Debug\netcoreapp3.1\FirstProgramm.exe
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\Программирование на С# для начинающих\fitsr\FirstProgramm\bin\Debug\netcoreapp3.1\FirstProgramm.deps.json
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\Программирование на С# для начинающих\fitsr\FirstProgramm\bin\Debug\netcoreapp3.1\FirstProgramm.runtimeconfig.json
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\Программирование на С# для начинающих\fitsr\FirstProgramm\bin\Debug\netcoreapp3.1\FirstProgramm.runtimeconfig.dev.json
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\Программирование на С# для начинающих\fitsr\FirstProgramm\bin\Debug\netcoreapp3.1\FirstProgramm.dll
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\Программирование на С# для начинающих\fitsr\FirstProgramm\bin\Debug\netcoreapp3.1\FirstProgramm.pdb
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\Программирование на С# для начинающих\fitsr\FirstProgramm\obj\Debug\netcoreapp3.1\FirstProgramm.csprojAssemblyReference.cache
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\Программирование на С# для начинающих\fitsr\FirstProgramm\obj\Debug\netcoreapp3.1\FirstProgramm.AssemblyInfoInputs.cache
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\Программирование на С# для начинающих\fitsr\FirstProgramm\obj\Debug\netcoreapp3.1\FirstProgramm.AssemblyInfo.cs
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\Программирование на С# для начинающих\fitsr\FirstProgramm\obj\Debug\netcoreapp3.1\FirstProgramm.csproj.CoreCompileInputs.cache
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\Программирование на С# для начинающих\fitsr\FirstProgramm\obj\Debug\netcoreapp3.1\FirstProgramm.dll
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\Программирование на С# для начинающих\fitsr\FirstProgramm\obj\Debug\netcoreapp3.1\FirstProgramm.pdb
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\Программирование на С# для начинающих\fitsr\FirstProgramm\obj\Debug\netcoreapp3.1\FirstProgramm.genruntimeconfig.cache
