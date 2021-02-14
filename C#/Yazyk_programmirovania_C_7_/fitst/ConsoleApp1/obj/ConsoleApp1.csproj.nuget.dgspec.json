@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "J:\\PROGRAMMING\\WEB\\GIT\\LEARNING\\stady\\C#\\Yazyk_programmirovania_C_7_\\fitst\\ConsoleApp1\\ConsoleApp1.csproj": {}
+    "C:\\Users\\alons\\OneDrive\\Рабочий стол\\Programming\\C#\\Yazyk_programmirovania_C_7_\\fitst\\ConsoleApp1\\ConsoleApp1.csproj": {}
   },
   "projects": {
-    "J:\\PROGRAMMING\\WEB\\GIT\\LEARNING\\stady\\C#\\Yazyk_programmirovania_C_7_\\fitst\\ConsoleApp1\\ConsoleApp1.csproj": {
+    "C:\\Users\\alons\\OneDrive\\Рабочий стол\\Programming\\C#\\Yazyk_programmirovania_C_7_\\fitst\\ConsoleApp1\\ConsoleApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "J:\\PROGRAMMING\\WEB\\GIT\\LEARNING\\stady\\C#\\Yazyk_programmirovania_C_7_\\fitst\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "C:\\Users\\alons\\OneDrive\\Рабочий стол\\Programming\\C#\\Yazyk_programmirovania_C_7_\\fitst\\ConsoleApp1\\ConsoleApp1.csproj",
         "projectName": "ConsoleApp1",
-        "projectPath": "J:\\PROGRAMMING\\WEB\\GIT\\LEARNING\\stady\\C#\\Yazyk_programmirovania_C_7_\\fitst\\ConsoleApp1\\ConsoleApp1.csproj",
-        "packagesPath": "C:\\Users\\virt\\.nuget\\packages\\",
-        "outputPath": "J:\\PROGRAMMING\\WEB\\GIT\\LEARNING\\stady\\C#\\Yazyk_programmirovania_C_7_\\fitst\\ConsoleApp1\\obj\\",
+        "projectPath": "C:\\Users\\alons\\OneDrive\\Рабочий стол\\Programming\\C#\\Yazyk_programmirovania_C_7_\\fitst\\ConsoleApp1\\ConsoleApp1.csproj",
+        "packagesPath": "C:\\Users\\alons\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alons\\OneDrive\\Рабочий стол\\Programming\\C#\\Yazyk_programmirovania_C_7_\\fitst\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\virt\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\alons\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -54,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
