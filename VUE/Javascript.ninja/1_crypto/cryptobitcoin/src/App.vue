@@ -49,7 +49,7 @@
           <div
             v-for="t in tikers"
             :key="t.name"
-            @click="sel = t"
+            @click="select(t)"
             :class="{
               'border-4': sel === t
             }"
@@ -91,10 +91,12 @@
           {{ sel.name }}
         </h3>
         <div class="flex items-end border-gray-600 border-b border-l h-64">
-          <div class="bg-purple-800 border w-10 h-24"></div>
-          <div class="bg-purple-800 border w-10 h-32"></div>
-          <div class="bg-purple-800 border w-10 h-48"></div>
-          <div class="bg-purple-800 border w-10 h-16"></div>
+          <div
+            v-for="(bar, idx) in normilizeGraph()"
+            :key="idx"
+            class="bg-purple-800 border w-10"
+            :style="{ height: `${bar}%` }"
+          ></div>
         </div>
         <button
           @click="sel = null"
@@ -143,27 +145,42 @@ export default {
   methods: {
     add() {
       this.id++;
-      const newTiker = { name: this.tiker, price: "-", id: this.id };
+      const currentTiker = { name: this.tiker, price: "-", id: this.id };
 
       if (this.tiker !== "") {
-        this.tikers.push(newTiker);
+        this.tikers.push(currentTiker);
         setInterval(async () => {
           const f = await fetch(
-            `https://min-api.cryptocompare.com/data/price?fsym=${newTiker.name}&tsyms=USD&api_key=8b90613564376a992e9d9adef1729d8c05a67c178e677315e81b4025338c6bcb`
+            `https://min-api.cryptocompare.com/data/price?fsym=${currentTiker.name}&tsyms=USD&api_key=8b90613564376a992e9d9adef1729d8c05a67c178e677315e81b4025338c6bcb`
           );
           const data = await f.json();
 
-          this.tikers.find(t => t.name === newTiker.name).price =
+          this.tikers.find(t => t.name === currentTiker.name).price =
             data.USD > 1 ? data.USD.toFixed(2) : data.USD.toPrecision(2);
-        }, 3000);
+
+          if (this.sel?.name === currentTiker.name) {
+            this.graph.push(data.USD);
+          }
+        }, 5000);
         this.tiker = "";
       } else {
         alert("Имя не должно быть пустым");
       }
     },
+    select(tiker) {
+      this.sel = tiker;
+      this.graph = [];
+    },
     handleDelete(tikerTiRemove) {
-      console.log(tikerTiRemove);
       this.tikers = this.tikers.filter(t => t.id !== tikerTiRemove.id);
+    },
+    normilizeGraph() {
+      const maxValue = Math.max(...this.graph);
+      const minValue = Math.min(...this.graph);
+
+      return this.graph.map(
+        price => 5 + ((price - minValue) * 95) / (maxValue - minValue)
+      );
     }
   }
 };
