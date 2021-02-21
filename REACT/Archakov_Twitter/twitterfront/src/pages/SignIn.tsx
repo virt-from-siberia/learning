@@ -5,6 +5,9 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import SearchIcon from "@material-ui/icons/Search";
 import GroupOutlinedIcon from "@material-ui/icons/GroupOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@material-ui/icons/ChatBubbleOutlineOutlined";
+import FormGroup from "@material-ui/core/FormGroup";
+import FormControl from "@material-ui/core/FormControl";
+import TextField from "@material-ui/core/TextField";
 
 export const useStylesSignIn = makeStyles((theme) => ({
   wrapper: {
@@ -73,6 +76,20 @@ export const useStylesSignIn = makeStyles((theme) => ({
 
 export const SignIn = () => {
   const classes = useStylesSignIn();
+
+  const [visibleModal, setVisibleModal] = React.useState<"signIn" | "signUp">();
+
+  const handleClickOpenSignIn = (): void => {
+    setVisibleModal("signIn");
+  };
+
+  const handleClickOpenSignUp = (): void => {
+    setVisibleModal("signUp");
+  };
+
+  const handleCloseModal = (): void => {
+    setVisibleModal(undefined);
+  };
 
   return (
     <div className={classes.wrapper}>
