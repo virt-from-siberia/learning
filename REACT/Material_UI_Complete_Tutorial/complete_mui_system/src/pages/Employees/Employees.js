@@ -22,7 +22,7 @@ export const Employees = () => {
       <PageHeader
         title="New Employer"
         subTitle="Form desing with validation"
-        icon={<PeopleIcon fontsize="large" />}
+        icon={<PeopleIcon fontSize="large" />}
       />
       <Paper className={classes.pageContent}>
         <EmployeeForm />
