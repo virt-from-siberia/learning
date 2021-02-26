@@ -34,10 +34,44 @@ const initialFValues = {
 };
 
 export const EmployeeForm = () => {
-  const { values, setValues, handleOnChange } = useForm(initialFValues);
+  const validate = (fieldValues = values) => {
+    let temp = { ...errors };
+    if ("fullName" in fieldValues)
+      temp.fullName = fieldValues.fullName ? "" : "This field is required";
+    if ("email" in fieldValues)
+      temp.email = /$^|.+@.+..+/.test(fieldValues.email)
+        ? ""
+        : "Email is not valid";
+    if ("mobile" in fieldValues)
+      temp.mobile = fieldValues.mobile.length > 9 ? "" : "Minimum 10 numbers";
+    if ("departmentId" in fieldValues)
+      temp.departmentId =
+        fieldValues.departmentId.length !== 0 ? "" : "This field is required";
+
+    setErrors({
+      ...temp,
+    });
+
+    if (fieldValues === values)
+      return Object.values(temp).every((x) => x === "");
+  };
+
+  const {
+    values,
+    setValues,
+    handleOnChange,
+    errors,
+    setErrors,
+    resetForm,
+  } = useForm(initialFValues, true, validate);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) window.alert("...testing");
+  };
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Grid container>
         <Grid item xs={6}>
           <Controls.Input
@@ -45,24 +79,28 @@ export const EmployeeForm = () => {
             label="Full Name"
             value={values.fullName}
             onChange={handleOnChange}
+            error={errors.fullName}
           />
           <Controls.Input
             label="Email"
             value={values.email}
             onChange={handleOnChange}
             name="email"
+            error={errors.email}
           />
           <Controls.Input
             label="Mobile"
             value={values.mobile}
             onChange={handleOnChange}
             name="mobile"
+            error={errors.mobile}
           />
           <Controls.Input
             label="City"
             value={values.city}
             onChange={handleOnChange}
             name="city"
+            error={errors.city}
           />
         </Grid>
         <Grid item xs={6}>
@@ -79,6 +117,7 @@ export const EmployeeForm = () => {
             value={values.departmentId}
             onChange={handleOnChange}
             options={employeeService.getDepartmentCollection()}
+            error={errors.departmentId}
           />
           <Controls.DatePicker
             name="hireDate"
@@ -94,7 +133,11 @@ export const EmployeeForm = () => {
           />
           <div>
             <Controls.Button text="Submit" type="submit" />
-            <Controls.Button text="Reset" color="secondary" />
+            <Controls.Button
+              text="Reset"
+              color="secondary"
+              onClick={resetForm}
+            />
           </div>
         </Grid>
       </Grid>
