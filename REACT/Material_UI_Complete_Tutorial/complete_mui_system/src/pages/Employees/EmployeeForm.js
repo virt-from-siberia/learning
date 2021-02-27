@@ -47,7 +47,6 @@ export const EmployeeForm = () => {
     if ("departmentId" in fieldValues)
       temp.departmentId =
         fieldValues.departmentId.length !== 0 ? "" : "This field is required";
-
     setErrors({
       ...temp,
     });
@@ -67,7 +66,10 @@ export const EmployeeForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validate()) window.alert("...testing");
+    if (validate()) {
+      employeeService.insertEmployee(values);
+      resetForm();
+    }
   };
 
   return (
