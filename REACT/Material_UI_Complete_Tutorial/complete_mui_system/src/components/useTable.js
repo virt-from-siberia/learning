@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function useTable(records, headCells) {
+export function useTable(records, headCells, filterFn) {
   const classes = useStyles();
 
   const pages = [5, 10, 25];
@@ -121,10 +121,10 @@ export function useTable(records, headCells) {
   }
 
   const recordsAfterPagingAndSorting = () => {
-    return stableSort(records, getComparator(order, orderBy)).slice(
-      page * rowsPerPage,
-      (page + 1) * rowsPerPage
-    );
+    return stableSort(
+      filterFn.fn(records),
+      getComparator(order, orderBy)
+    ).slice(page * rowsPerPage, (page + 1) * rowsPerPage);
   };
 
   return {
