@@ -1,46 +1,46 @@
-import React from 'react';
-import { makeStyles, Typography, Button } from '@material-ui/core';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import SearchIcon from '@material-ui/icons/Search';
-import PeopleIcon from '@material-ui/icons/PeopleOutline';
-import MessageIcon from '@material-ui/icons/ModeCommentOutlined';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControl from '@material-ui/core/FormControl';
-import TextField from '@material-ui/core/TextField';
-import { ModalBlock } from '../components/ModalBlock';
+import React from "react";
+import { makeStyles, Typography, Button } from "@material-ui/core";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import SearchIcon from "@material-ui/icons/Search";
+import PeopleIcon from "@material-ui/icons/PeopleOutline";
+import MessageIcon from "@material-ui/icons/ModeCommentOutlined";
+import FormGroup from "@material-ui/core/FormGroup";
+import FormControl from "@material-ui/core/FormControl";
+import TextField from "@material-ui/core/TextField";
+import { ModalBlock } from "../components/ModalBlock";
 
 export const useStylesSignIn = makeStyles((theme) => ({
   wrapper: {
-    display: 'flex',
-    height: '100vh',
+    display: "flex",
+    height: "100vh",
   },
   blueSide: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#71C9F8',
-    flex: '0 0 50%',
-    overflow: 'hidden',
-    position: 'relative',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#71C9F8",
+    flex: "0 0 50%",
+    overflow: "hidden",
+    position: "relative",
   },
   blueSideBigIcon: {
-    position: 'absolute',
-    left: '50%',
-    top: '53%',
-    transform: 'translate(-50%, -50%)',
-    width: '350%',
-    height: '350%',
+    position: "absolute",
+    left: "50%",
+    top: "53%",
+    transform: "translate(-50%, -50%)",
+    width: "350%",
+    height: "350%",
   },
   blueSideListInfo: {
-    position: 'relative',
-    listStyle: 'none',
+    position: "relative",
+    listStyle: "none",
     padding: 0,
     margin: 0,
     width: 380,
-    '& h6': {
-      display: 'flex',
-      alignItems: 'center',
-      color: 'white',
+    "& h6": {
+      display: "flex",
+      alignItems: "center",
+      color: "white",
       fontWeight: 700,
       fontSize: 20,
     },
@@ -53,10 +53,10 @@ export const useStylesSignIn = makeStyles((theme) => ({
     marginRight: 15,
   },
   loginSide: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: '0 0 50%',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flex: "0 0 50%",
   },
   loginSideTwitterIcon: {
     fontSize: 45,
@@ -81,16 +81,16 @@ export const useStylesSignIn = makeStyles((theme) => ({
   },
 }));
 
-function SignIn() {
+export const SignIn: React.FC = (): React.ReactElement => {
   const classes = useStylesSignIn();
-  const [visibleModal, setVisibleModal] = React.useState<'signIn' | 'signUp'>();
+  const [visibleModal, setVisibleModal] = React.useState<"signIn" | "signUp">();
 
   const handleClickOpenSignIn = (): void => {
-    setVisibleModal('signIn');
+    setVisibleModal("signIn");
   };
 
   const handleClickOpenSignUp = (): void => {
-    setVisibleModal('signUp');
+    setVisibleModal("signUp");
   };
 
   const handleCloseModal = (): void => {
@@ -124,8 +124,15 @@ function SignIn() {
       </section>
       <section className={classes.loginSide}>
         <div className={classes.loginSideWrapper}>
-          <TwitterIcon color="primary" className={classes.loginSideTwitterIcon} />
-          <Typography className={classes.loginSideTitle} gutterBottom variant="h4">
+          <TwitterIcon
+            color="primary"
+            className={classes.loginSideTwitterIcon}
+          />
+          <Typography
+            className={classes.loginSideTitle}
+            gutterBottom
+            variant="h4"
+          >
             Узнайте, что происходит в мире прямо сейчас
           </Typography>
           <Typography>
@@ -137,18 +144,29 @@ function SignIn() {
             style={{ marginBottom: 20 }}
             variant="contained"
             color="primary"
-            fullWidth>
+            fullWidth
+          >
             Зарегистрироваться
           </Button>
-          <Button onClick={handleClickOpenSignIn} variant="outlined" color="primary" fullWidth>
+          <Button
+            onClick={handleClickOpenSignIn}
+            variant="outlined"
+            color="primary"
+            fullWidth
+          >
             Войти
           </Button>
           <ModalBlock
-            visible={visibleModal === 'signIn'}
+            visible={visibleModal === "signIn"}
             onClose={handleCloseModal}
             classes={classes}
-            title="Войти в аккаунт">
-            <FormControl className={classes.loginFormControl} component="fieldset" fullWidth>
+            title="Войти в аккаунт"
+          >
+            <FormControl
+              className={classes.loginFormControl}
+              component="fieldset"
+              fullWidth
+            >
               <FormGroup aria-label="position" row>
                 <TextField
                   className={classes.loginSideField}
@@ -174,18 +192,28 @@ function SignIn() {
                   type="password"
                   fullWidth
                 />
-                <Button onClick={handleCloseModal} variant="contained" color="primary" fullWidth>
+                <Button
+                  onClick={handleCloseModal}
+                  variant="contained"
+                  color="primary"
+                  fullWidth
+                >
                   Войти
                 </Button>
               </FormGroup>
             </FormControl>
           </ModalBlock>
           <ModalBlock
-            visible={visibleModal === 'signUp'}
+            visible={visibleModal === "signUp"}
             onClose={handleCloseModal}
             classes={classes}
-            title="Создайте учетную запись">
-            <FormControl className={classes.loginFormControl} component="fieldset" fullWidth>
+            title="Создайте учетную запись"
+          >
+            <FormControl
+              className={classes.loginFormControl}
+              component="fieldset"
+              fullWidth
+            >
               <FormGroup aria-label="position" row>
                 <TextField
                   className={classes.registerField}
@@ -233,6 +261,4 @@ function SignIn() {
       </section>
     </div>
   );
-}
-
-export default SignIn;
+};
