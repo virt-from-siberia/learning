@@ -15,15 +15,19 @@ function ProductDetailPage(props) {
   );
 }
 
-export async function getStaticProps(context) {
-  const { params } = context;
-
-  const productId = params.pid;
-
+async function getData() {
   const filePath = path.join(process.cwd(), "data", "dummy-backend.json");
   const jsonData = await fs.readFile(filePath);
   const data = JSON.parse(jsonData);
 
+  return data;
+}
+
+export async function getStaticProps(context) {
+  const { params } = context;
+  const productId = params.pid;
+
+  const data = await getData();
   const product = data.products.find((product) => product.id === productId);
 
   return {
@@ -34,14 +38,13 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
+  const data = await getData();
+
+  const ids = data.products.map((product) => product.id);
+  const params = ids.map((id) => ({ params: { pid: id } }));
+
   return {
-    paths: [
-      {
-        params: {
-          pid: "p1",
-        },
-      },
-    ],
+    paths: params,
     fallback: "blocking",
   };
 }
