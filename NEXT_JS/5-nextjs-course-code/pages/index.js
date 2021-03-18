@@ -1,6 +1,6 @@
+import Link from "next/link";
 import path from "path";
 import fs from "fs/promises";
-import Link from "next/link";
 
 function HomePage(props) {
   const { products } = props;
@@ -9,7 +9,7 @@ function HomePage(props) {
     <ul>
       {products.map((product) => (
         <li key={product.id}>
-          <Link href={`${product.id}`}>{product.title}</Link>
+          <Link href={`/products/${product.id}`}>{product.title}</Link>
         </li>
       ))}
     </ul>
@@ -39,15 +39,5 @@ export async function getStaticProps() {
     revalidate: 10,
   };
 }
-
-// export function getServerSideProps(context) {
-//   console.log(context.req.headers["user-agent"]);
-
-//   return {
-//     props: {
-//       products: [{ id: "p1", title: "Product1" }],
-//     },
-//   };
-// }
 
 export default HomePage;

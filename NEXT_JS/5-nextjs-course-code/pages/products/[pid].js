@@ -1,5 +1,6 @@
 import path from "path";
 import fs from "fs/promises";
+
 function ProductDetailPage(props) {
   const { loadedProduct } = props;
 
@@ -45,7 +46,7 @@ export async function getStaticPaths() {
 
   return {
     paths: params,
-    fallback: "blocking",
+    fallback: false,
   };
 }
 
