@@ -1,9 +1,14 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 import SideMenu from "../components/SideMenu";
-import { makeStyles, CssBaseline, createMuiTheme, ThemeProvider } from '@material-ui/core';
+import {
+  makeStyles,
+  CssBaseline,
+  createMuiTheme,
+  ThemeProvider,
+} from "@material-ui/core";
 import Header from "../components/Header";
-import PageHeader from '../components/PageHeader';
+import PageHeader from "../components/PageHeader";
 
 import Employees from "../pages/Employees/Employees";
 
@@ -11,37 +16,37 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       main: "#333996",
-      light: '#3c44b126'
+      light: "#3c44b126",
     },
     secondary: {
       main: "#f83245",
-      light: '#f8324526'
+      light: "#f8324526",
     },
     background: {
-      default: "#f4f5fd"
+      default: "#f4f5fd",
     },
   },
-  overrides:{
-    MuiAppBar:{
-      root:{
-        transform:'translateZ(0)'
-      }
-    }
+  overrides: {
+    MuiAppBar: {
+      root: {
+        transform: "translateZ(0)",
+      },
+    },
   },
-  props:{
-    MuiIconButton:{
-      disableRipple:true
-    }
-  }
-})
-
+  props: {
+    MuiIconButton: {
+      disableRipple: true,
+    },
+  },
+});
 
 const useStyles = makeStyles({
   appMain: {
-    paddingLeft: '320px',
-    width: '100%'
-  }
-})
+    paddingLeft: "320px",
+    width: "100%",
+  },
+});
+const a = 42; //?
 
 function App() {
   const classes = useStyles();
@@ -51,7 +56,7 @@ function App() {
       <SideMenu />
       <div className={classes.appMain}>
         <Header />
-        
+
         <Employees />
       </div>
       <CssBaseline />
