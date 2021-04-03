@@ -1,0 +1,7 @@
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\ITVDN_STARTER\MyProgram\bin\Debug\MyProgram.exe.config
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\ITVDN_STARTER\MyProgram\bin\Debug\MyProgram.exe
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\ITVDN_STARTER\MyProgram\bin\Debug\MyProgram.pdb
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\ITVDN_STARTER\MyProgram\obj\Debug\MyProgram.csprojAssemblyReference.cache
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\ITVDN_STARTER\MyProgram\obj\Debug\MyProgram.csproj.CoreCompileInputs.cache
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\ITVDN_STARTER\MyProgram\obj\Debug\MyProgram.exe
+J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\ITVDN_STARTER\MyProgram\obj\Debug\MyProgram.pdb
