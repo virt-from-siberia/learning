@@ -5,3 +5,10 @@ J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\ITVDN_STARTER\MyProgram\obj\Debug\MyPro
 J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\ITVDN_STARTER\MyProgram\obj\Debug\MyProgram.csproj.CoreCompileInputs.cache
 J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\ITVDN_STARTER\MyProgram\obj\Debug\MyProgram.exe
 J:\PROGRAMMING\WEB\GIT\LEARNING\stady\C#\ITVDN_STARTER\MyProgram\obj\Debug\MyProgram.pdb
+C:\Users\alons\OneDrive\Рабочий стол\Programming\C#\ITVDN_STARTER\MyProgram\bin\Debug\MyProgram.exe.config
+C:\Users\alons\OneDrive\Рабочий стол\Programming\C#\ITVDN_STARTER\MyProgram\bin\Debug\MyProgram.exe
+C:\Users\alons\OneDrive\Рабочий стол\Programming\C#\ITVDN_STARTER\MyProgram\bin\Debug\MyProgram.pdb
+C:\Users\alons\OneDrive\Рабочий стол\Programming\C#\ITVDN_STARTER\MyProgram\obj\Debug\MyProgram.csprojAssemblyReference.cache
+C:\Users\alons\OneDrive\Рабочий стол\Programming\C#\ITVDN_STARTER\MyProgram\obj\Debug\MyProgram.csproj.CoreCompileInputs.cache
+C:\Users\alons\OneDrive\Рабочий стол\Programming\C#\ITVDN_STARTER\MyProgram\obj\Debug\MyProgram.exe
+C:\Users\alons\OneDrive\Рабочий стол\Programming\C#\ITVDN_STARTER\MyProgram\obj\Debug\MyProgram.pdb
