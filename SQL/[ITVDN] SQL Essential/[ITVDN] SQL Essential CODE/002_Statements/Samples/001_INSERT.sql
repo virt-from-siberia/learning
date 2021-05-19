@@ -4,6 +4,9 @@ GO
 -------------------------------------------------------------------------
 				/* Создем таблицу с именем MyFriends*/
 -------------------------------------------------------------------------
+
+DROP TABLE MyFriends
+
 CREATE TABLE MyFriends
 (
 	FrndId smallint IDENTITY NOT NULL,
@@ -26,7 +29,7 @@ EXEC sp_help MyFriends
 
 -- Записываем строку в таблицу MyFreand
 INSERT INTO MyFriends             -- Ключевое слово INTO можно не использовать.
-(FstName, BthDate, Ntel) -- Указание порядка записи данных.
+(FstName,LstName, BthDate, Ntel) -- Указание порядка записи данных.
 VALUES
 ('Max', 'Petrov', '02/03/1988', '093*******'); -- Вводимые данные.
 GO
