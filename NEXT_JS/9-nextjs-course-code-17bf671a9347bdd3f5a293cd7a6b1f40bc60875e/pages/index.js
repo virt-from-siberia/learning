@@ -24,6 +24,9 @@ function HomePage() {
     })
       .then((response) => response.json())
       .then((data) => console.log(data));
+
+    emailInputRef.current.value = "";
+    feedbackInputRef.current.value = "";
   }
 
   return (
