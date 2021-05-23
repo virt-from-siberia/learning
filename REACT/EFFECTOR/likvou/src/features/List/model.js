@@ -11,14 +11,14 @@ export const $todosIds = createStore([]) //
 export const $todosContent = createStore({}) //
   .on(addTodo, (state, { id, content }) => ({
     ...state,
-    [id]: content
+    [id]: content,
   }));
 
 export const $todosCompleted = createStore({}) //
   .on(addTodo, (state, { id }) => ({ ...state, [id]: false }))
   .on(toggleTodo, (state, id) => ({
     ...state,
-    [id]: !state[id]
+    [id]: !state[id],
   }));
 
 export const $todosIdsVisible = createStore([]);
@@ -28,10 +28,10 @@ let nextTodoId = 0;
 export const initiateStore = ({ $visibilityFilter, submiteForm }) => {
   forward({
     to: addTodo,
-    from: submiteForm.map(content => ({
+    from: submiteForm.map((content) => ({
       id: ++nextTodoId,
-      content
-    }))
+      content,
+    })),
   });
 
   forward({
@@ -43,15 +43,15 @@ export const initiateStore = ({ $visibilityFilter, submiteForm }) => {
       (todosIds, todosCompleted, visibilityFilter) => {
         switch (visibilityFilter) {
           case VISIBILITY_FILTERS.COMPLETED:
-            return todosIds.filter(id => todosCompleted[id]);
+            return todosIds.filter((id) => todosCompleted[id]);
           case VISIBILITY_FILTERS.INCOMPLETE:
-            return todosIds.filter(id => !todosCompleted[id]);
+            return todosIds.filter((id) => !todosCompleted[id]);
           case VISIBILITY_FILTERS.ALL:
           default:
             return todosIds;
         }
       }
-    )
+    ),
   });
 
   return $todosIdsVisible;

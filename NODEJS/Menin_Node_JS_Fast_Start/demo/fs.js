@@ -1,7 +1,5 @@
-const fs = require('fs');
-const path = require('path')
-
-
+const fs = require("fs");
+const path = require("path");
 
 // fs.mkdir(path.join(__dirname, 'test'), (err)=>{
 //   if(err){
@@ -11,8 +9,7 @@ const path = require('path')
 //   console.log('Folred made')
 // })
 
-
-const filePath = path.join(__dirname, 'test', 'text2.txt');
+const filePath = path.join(__dirname, "test", "text2.txt");
 
 // fs.writeFile(filePath, 'Hello NodeJs!' , err =>{
 // if(err){
@@ -22,23 +19,22 @@ const filePath = path.join(__dirname, 'test', 'text2.txt');
 // console.log('File created')
 // })
 
-fs.appendFile(filePath, '\n appendFile' , err =>{
-if(err){
-  throw err
-}
-
-console.log('File created')
-})
-
-
-fs.readFile(filePath, 'utf-8' ,(err, content) => {
-  if(err){
-    throw err
+fs.appendFile(filePath, "\n appendFile", (err) => {
+  if (err) {
+    throw err;
   }
 
-  console.log(content)
+  console.log("File created");
+});
+
+fs.readFile(filePath, "utf-8", (err, content) => {
+  if (err) {
+    throw err;
+  }
+
+  console.log(content);
 
   // const data = Buffer.from(content)
 
   // console.log(data.toString())
-})
+});

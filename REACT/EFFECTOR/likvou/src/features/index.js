@@ -5,7 +5,7 @@ import { Form, submiteForm } from "./Form";
 import { List } from "./List";
 import { Todo } from "./Todo";
 
-const ListContainer = props => (
+const ListContainer = (props) => (
   <List
     {...props}
     $visibilityFilter={$visibilityFilter}
@@ -17,5 +17,5 @@ export {
   Controls, //
   Form, //
   Todo, //
-  ListContainer as List //
+  ListContainer as List, //
 };
