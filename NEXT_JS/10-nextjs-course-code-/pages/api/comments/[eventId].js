@@ -1,4 +1,9 @@
-import { MongoClient } from "mongodb";
+
+import {
+  connectDB,
+  getAllDocuments,
+  insertDocument,
+} from "../../../helpers/db-utils";
 
 const DB_NAME = "events";
 const DB_COLLECTION = "comments";
@@ -6,9 +11,14 @@ const DB_COLLECTION = "comments";
 async function handler(req, res) {
   const eventId = req.query.eventId;
 
-  const client = await MongoClient.connect(
-    `mongodb+srv://alex:alex@cluster0.qunp1.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`
-  );
+  let client;
+
+  try {
+    client = await connectDB(DB_NAME);
+  } catch (error) {
+    res.status(500).json({ message: "Could not connect to DB filed" });
+    return;
+  }
 
   //POST
   if (req.method === "POST") {
@@ -32,25 +42,21 @@ async function handler(req, res) {
       eventId,
     };
 
-    const db = client.db();
-    const result = await db.collection(DB_COLLECTION).insertOne(newComment);
-
-    console.log(result);
+    const result = await insertDocument(client, newComment, DB_COLLECTION);
 
     newComment.id = result.insertedId;
     res.status(201).json({ message: "Added comment", comment: newComment });
   }
   //GET
   if (req.method === "GET") {
-    const db = client.db();
+    try {
+      const sortBy = { _id: -1 };
+      const documents = await getAllDocuments(client, DB_COLLECTION, sortBy);
 
-    const documents = await db
-      .collection(DB_COLLECTION)
-      .find()
-      .sort({ _id: -1 })
-      .toArray();
-
-    res.status(200).json({ comment: documents });
+      res.status(200).json({ comment: documents });
+    } catch (error) {
+      res.status(500).json({ message: "Getting comments fail" });
+    }
   }
 
   client.close();
