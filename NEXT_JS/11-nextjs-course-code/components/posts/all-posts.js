@@ -1,6 +1,6 @@
+import Head from "next/head";
 import PostsGrid from "./posts-grid";
 import classes from "./all-posts.module.css";
-
 function AllPosts(props) {
   return (
     <section className={classes.posts}>
