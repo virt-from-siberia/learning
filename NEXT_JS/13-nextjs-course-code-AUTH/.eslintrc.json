@@ -1,0 +1,42 @@
+{
+  "extends": [
+    "eslint:recommended",   
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/react"
+  ],
+  "rules": {
+    "no-restricted-syntax": 0,
+    "prettier/prettier": "error",
+    "default-case": 0,
+    "import/prefer-default-export": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/display-name": 0,
+    "react/prop-types": 0,
+    "no-console": [
+      0,
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+    "no-underscore-dangle": [
+      "error",
+      { "allow": ["__component"] }
+    ],
+    "func-names": [
+      "error",
+      "as-needed",
+      {
+        "generators": "as-needed"
+      }
+    ],
+    "no-unused-expressions": [
+      2,
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true
+      }
+    ]
+  }
+}
