@@ -1,5 +1,5 @@
 import NextAuth from 'next-auth'
-import Providers from 'next-auth/provides'
+import Providers from 'next-auth/providers'
 
 import { connectToDB } from '../../../lib/db'
 import { verifyPassword } from '../../../lib/auth'
@@ -13,42 +13,40 @@ export default NextAuth({
   session: {
     jwt: true,
   },
-  provides: [
+  providers: [
     Providers.Credentials({
-      credentials: {
-        async authorize(credentials) {
-          const client = await connectToDB()
+      async authorize(credentials) {
+        const client = await connectToDB()
 
-          const usersCollection = client
-            .db()
-            .collection(DB_COLLECTIONS.USERS)
+        const usersCollection = client
+          .db()
+          .collection(DB_COLLECTIONS.USERS)
 
-          const user =
-            await usersCollection.findOne({
-              email: credentials.email,
-            })
+        const user =
+          await usersCollection.findOne({
+            email: credentials.email,
+          })
 
-          if (!user)
-            throw new Error(
-              DB_MESSAGES.USER_NOT_FOUND
-            )
-
-          const isValid = await verifyPassword(
-            credentials.password,
-            user.password
+        if (!user)
+          throw new Error(
+            DB_MESSAGES.USER_NOT_FOUND
           )
 
-          if (!isValid)
-            throw new Error(
-              DB_MESSAGES.COULD_NOT_LOGIN
-            )
+        const isValid = await verifyPassword(
+          credentials.password,
+          user.password
+        )
 
-          client.close()
+        if (!isValid)
+          throw new Error(
+            DB_MESSAGES.COULD_NOT_LOGIN
+          )
 
-          return {
-            email: user.email,
-          }
-        },
+        client.close()
+
+        return {
+          email: user.email,
+        }
       },
     }),
   ],

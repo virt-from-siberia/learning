@@ -4,7 +4,8 @@ export function validate(email, password) {
     !email.includes('@') ||
     !password ||
     password.trim().length < 7
-  )
+  ) {
     return false
+  }
   return true
 }

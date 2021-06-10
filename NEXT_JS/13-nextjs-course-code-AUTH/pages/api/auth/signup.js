@@ -36,7 +36,10 @@ async function handler(req, res) {
     return
   }
 
-  const hashedPassword = hashPassword(password)
+  const hashedPassword = await hashPassword(
+    password
+  )
+  console.log('hashedPassword', hashedPassword)
   const document = {
     email,
     password: hashedPassword,

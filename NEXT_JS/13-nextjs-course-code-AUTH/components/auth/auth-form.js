@@ -1,7 +1,7 @@
 import { signIn } from 'next-auth/client'
 import { useState, useRef } from 'react'
+import { useRouter } from 'next/router'
 
-import { AUTH } from '../../constants/db'
 import classes from './auth-form.module.css'
 
 async function createUser(email, password) {
@@ -30,6 +30,7 @@ function AuthForm() {
   const passwordInputRef = useRef()
   const [isLogin, setIsLogin] = useState(true)
   const [pending, setPending] = useState(false)
+  const router = useRouter()
 
   function switchAuthModeHandler() {
     setIsLogin(prevState => !prevState)
@@ -45,9 +46,16 @@ function AuthForm() {
       passwordInputRef.current.value
 
     if (isLogin) {
-      const result = await signIn(AUTH.METHOD, {
+      const result = await signIn('credentials', {
         redirect: false,
+        email: enteredEmail,
+        password: enteredPassword,
       })
+      setPending(false)
+
+      if (!result.error) {
+        router.replace('/profile')
+      }
     } else {
       try {
         const result = await createUser(
@@ -89,29 +97,54 @@ function AuthForm() {
             ref={passwordInputRef}
           />
         </div>
+
         {pending ? (
-          <p>...fetching</p>
+          <LoadingJSX />
         ) : (
-          <div className={classes.actions}>
-            <button>
-              {isLogin
-                ? 'Login'
-                : 'Create Account'}
-            </button>
-            <button
-              type='button'
-              className={classes.toggle}
-              onClick={switchAuthModeHandler}
-              disabled={pending}
-            >
-              {isLogin
-                ? 'Create new account'
-                : 'Login with existing account'}
-            </button>
-          </div>
+          <ActionJSX
+            classname={classes.toggle}
+            handler={switchAuthModeHandler}
+            isLogin={isLogin}
+          />
         )}
       </form>
     </section>
+  )
+}
+
+const ActionJSX = props => {
+  const { classname, handler, isLogin } = props
+
+  return (
+    <div className={classes.actions}>
+      <button>
+        {isLogin ? 'Login' : 'Create Account'}
+      </button>
+      <button
+        type='button'
+        className={classname}
+        onClick={handler}
+      >
+        {isLogin
+          ? 'Create new account'
+          : 'Login with existing account'}
+      </button>
+    </div>
+  )
+}
+
+const LoadingJSX = () => {
+  return (
+    <div>
+      <h3
+        style={{
+          color: 'white',
+          fontWeight: 'bold',
+        }}
+      >
+        Loading.....
+      </h3>
+    </div>
   )
 }
 
