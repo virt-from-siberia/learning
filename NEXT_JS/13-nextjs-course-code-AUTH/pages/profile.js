@@ -8,7 +8,6 @@ function ProfilePage() {
 export async function getServerSideProps(
   context
 ) {
-  console.log(context.req)
   const session = await getSession({
     req: context.req,
   })
@@ -25,7 +24,7 @@ export async function getServerSideProps(
 
   return {
     props: {
-      session: session,
+      session,
     },
   }
 }
