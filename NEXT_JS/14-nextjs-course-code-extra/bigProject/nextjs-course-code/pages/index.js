@@ -1,50 +1,51 @@
+import { MongoClient } from 'mongodb'
 import MeetupList from '../components/meetups/MeetupList'
 
 function HomePage(props) {
+  console.log(props)
   return <MeetupList meetups={props.meetups} />
 }
 
-export async function getServerSideProps(
-  context
-) {
-  const req = context.req
-  const res = context.res
+export async function getStaticProps() {
+  const client = await MongoClient.connect(
+    'mongodb+srv://alex:5l3exDU15qo5ECOh@cluster0.qunp1.mongodb.net/meetups?retryWrites=true&w=majority'
+  )
+  const db = client.db()
+  const meetupsCollection =
+    db.collection('meetups')
 
-  console.log(res)
+  const meetups = await meetupsCollection
+    .find()
+    .toArray()
+
+  client.close()
+
+  console.log(meetups)
 
   return {
     props: {
-      meetups: DUMMY_MEETUPS,
+      meetups: meetups.map(meetup => ({
+        title: meetup.title,
+        address: meetup.address,
+        id: meetup._id.toString(),
+        image: meetup.image,
+      })),
     },
+    revalidate: 3600,
   }
 }
 
-// export async function getStaticProps() {
+// export async function getServerSideProps(
+//   context
+// ) {
+//   const req = context.req
+//   const res = context.res
+
 //   return {
 //     props: {
 //       meetups: DUMMY_MEETUPS,
 //     },
-//     revalidate: 3600,
 //   }
 // }
 
 export default HomePage
-
-const DUMMY_MEETUPS = [
-  {
-    id: 'm1',
-    title: 'First Meetup',
-    image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3E_JKckPXcB2PyudDfACaxIJOaM0A33oZzMcUBVFCa9IR2oJGK7rDIes6ZebapOTNOk0&usqp=CAU',
-    address: 'Some address 5, Some City',
-    description: 'This is a first meetup',
-  },
-  {
-    id: 'm2',
-    title: 'Second Meetup',
-    image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3E_JKckPXcB2PyudDfACaxIJOaM0A33oZzMcUBVFCa9IR2oJGK7rDIes6ZebapOTNOk0&usqp=CAU',
-    address: 'Some address 10, Some City',
-    description: 'This is a second meetup',
-  },
-]
