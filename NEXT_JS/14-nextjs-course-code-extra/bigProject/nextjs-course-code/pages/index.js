@@ -19,9 +19,6 @@ export async function getStaticProps() {
     .toArray()
 
   client.close()
-
-  console.log(meetups)
-
   return {
     props: {
       meetups: meetups.map(meetup => ({

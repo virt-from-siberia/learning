@@ -1,53 +1,72 @@
-// import { useRouter } from 'next/router'
+import { MongoClient, ObjectId } from 'mongodb'
 import MeetupDetail from '../../components/meetups/MeetupDetail'
 
 function MeetupDetails(props) {
-  const { image, title, address, description } =
-    props.meetupData
-
   return (
     <>
       <MeetupDetail
-        image={image}
-        title={title}
-        address={address}
-        description={description}
+        image={props.meetupData.image}
+        title={props.meetupData.title}
+        address={props.meetupData.address}
+        description={props.meetupData.description}
       />
     </>
   )
 }
 
 export async function getStaticPaths() {
+  const client = await MongoClient.connect(
+    'mongodb+srv://alex:5l3exDU15qo5ECOh@cluster0.qunp1.mongodb.net/meetups?retryWrites=true&w=majority'
+  )
+  const db = client.db()
+  const meetupsCollection =
+    db.collection('meetups')
+
+  const meetups = await meetupsCollection
+    .find(
+      {},
+      {
+        _id: 1,
+      }
+    )
+    .toArray()
+
+  client.close()
   return {
     fallback: false,
-    paths: [
-      {
-        params: {
-          meetupId: 'm1',
-        },
+    paths: meetups.map(meetup => ({
+      params: {
+        meetupId: meetup._id.toString(),
       },
-      {
-        params: {
-          meetupId: 'm2',
-        },
-      },
-    ],
+    })),
   }
 }
 
-export function getStaticProps(context) {
+export async function getStaticProps(context) {
   const meetupId = context.params.meetupId
+
+  const client = await MongoClient.connect(
+    'mongodb+srv://alex:5l3exDU15qo5ECOh@cluster0.qunp1.mongodb.net/meetups?retryWrites=true&w=majority'
+  )
+  const db = client.db()
+  const meetupsCollection =
+    db.collection('meetups')
+
+  const selectedMeetUp =
+    await meetupsCollection.findOne({
+      _id: ObjectId(meetupId),
+    })
+
+  client.close()
 
   return {
     props: {
       meetupData: {
-        id: 'meetupId',
-        image:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3E_JKckPXcB2PyudDfACaxIJOaM0A33oZzMcUBVFCa9IR2oJGK7rDIes6ZebapOTNOk0&usqp=CAU',
-
-        title: 'First meetup',
-        address: 'Some street 5, Some City',
-        description: 'The meetup description',
+        id: selectedMeetUp._id.toString(),
+        title: selectedMeetUp.title,
+        image: selectedMeetUp.image,
+        address: selectedMeetUp.address,
+        description: selectedMeetUp.description,
       },
     },
   }
