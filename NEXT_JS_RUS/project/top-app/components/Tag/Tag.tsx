@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { TagProps } from "./Tag.props";
 import cn from "classnames";
 import styles from "./Tag.module.css";
@@ -23,7 +24,7 @@ export const Tag = ({
       })}
       {...props}
     >
-      {href ? <a href={href}>{children}</a> : { children }}
+      {href ? <a href={href}>{children}</a> : <Fragment> {children}</Fragment>}
     </div>
   );
 };

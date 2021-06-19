@@ -1,13 +1,18 @@
+import React, { useState } from "react";
+
 import { Htag } from "../components/Htag/Htag";
 import { Button } from "../components/Button/Button";
 import { P } from "../components/P/P";
 import { Tag } from "../components/Tag/Tag";
-import React from "react";
+import { Raiting } from "../components/Raiting/Raiting";
 
 export default function Home(): JSX.Element {
+  const [rating, setRating] = useState<number>(4);
+
   return (
     <React.Fragment>
       <Htag tag="h3">sadasd</Htag>
+
       <Button appearance="primary" className="asdsadsad" arrow="right">
         Button
       </Button>
@@ -17,7 +22,19 @@ export default function Home(): JSX.Element {
       <P size="l">Большой</P>
       <P size="m">Средний</P>
       <P size="s">Маленький</P>
-      <Tag size="s">Маленький</Tag>
+      <Tag size="s" color="ghost">
+        Ghost
+      </Tag>
+      <Tag size="m" color="red">
+        Red
+      </Tag>
+      <Tag size="s" color="green">
+        Green
+      </Tag>
+      <Tag size="s" color="primary">
+        Primary
+      </Tag>
+      <Raiting rating={rating} setRating={setRating} isEditable />
     </React.Fragment>
   );
 }
