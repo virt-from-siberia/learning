@@ -5,12 +5,13 @@ import { Button } from "../components/Button/Button";
 import { P } from "../components/P/P";
 import { Tag } from "../components/Tag/Tag";
 import { Raiting } from "../components/Raiting/Raiting";
+import { withLayout } from "../layout/Layout";
 
-export default function Home(): JSX.Element {
+function Home(): JSX.Element {
   const [rating, setRating] = useState<number>(4);
 
   return (
-    <React.Fragment>
+    <>
       <Htag tag="h3">sadasd</Htag>
 
       <Button appearance="primary" className="asdsadsad" arrow="right">
@@ -35,6 +36,8 @@ export default function Home(): JSX.Element {
         Primary
       </Tag>
       <Raiting rating={rating} setRating={setRating} isEditable />
-    </React.Fragment>
+    </>
   );
 }
+
+export default withLayout(Home);
