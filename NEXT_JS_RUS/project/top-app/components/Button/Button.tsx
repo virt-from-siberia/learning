@@ -1,5 +1,5 @@
 import { IButtonProps } from "./ButtonTypes";
-import ArrowSVG from "./arrow.svg";
+// import ArrowSVG from "./arrow.svg";
 import styles from "./Button.module.css";
 import cn from "classnames";
 
@@ -20,15 +20,10 @@ export const Button = (props: IButtonProps): JSX.Element => {
     [styles.primary]: arrow === "down",
   });
 
-
   return (
     <button className={buttonClassName} {...otherProps}>
       {children}
-      {arrow !== "none" && (
-        <span className={arrowClassName}>
-          <ArrowSVG />
-        </span>
-      )}
+      {arrow !== "none" && <span className={arrowClassName}>{"-->"}</span>}
     </button>
   );
 };

@@ -4,10 +4,7 @@ import { RaitingProps } from "./Raiting.props";
 import cn from "classnames";
 import styles from "./Raiting.module.css";
 
-import StarIconSVG from "./star.svg";
-
 export const Raiting = ({
-  children,
   isEditable = false,
   rating,
   setRating,
@@ -33,9 +30,9 @@ export const Raiting = ({
           onMouseLeave={() => changeDisplay(rating)}
           onClick={() => handlerClick(i + 1)}
         >
-          <StarIconSVG
+          <div
             tabIndex={isEditable ? 0 : -1}
-            onKeyDown={(e: KeyboardEvent<SVGElement>) =>
+            onKeyDown={(e: KeyboardEvent<any>) =>
               isEditable && handleSpace(i + 1, e)
             }
           />
@@ -55,7 +52,7 @@ export const Raiting = ({
     setRating(i);
   };
 
-  const handleSpace = (i: number, e: KeyboardEvent<SVGElement>) => {
+  const handleSpace = (i: number, e: KeyboardEvent<any>) => {
     if ((e.code !== "Space" && e.code !== "Enter") || !setRating) return;
     setRating(i);
   };
