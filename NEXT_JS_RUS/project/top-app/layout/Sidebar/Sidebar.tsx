@@ -7,6 +7,7 @@ import styles from "./Sidebar.module.css";
 export const Sidebar = ({ ...props }: SidebarProps): JSX.Element => {
   return (
     <div {...props}>
+      SIDEBAR
       <Menu />
     </div>
   );
