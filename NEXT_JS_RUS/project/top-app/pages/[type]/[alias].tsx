@@ -8,15 +8,16 @@ import { MenuItem } from "../../interfaces/menu.interface";
 import { TopPageModel } from "../../interfaces/toppage.interface";
 import { ParsedUrlQuery } from "querystring";
 import { ProductModel } from "../../interfaces/product.interface";
+import { TopLevelCategory } from "../../interfaces/toppage.interface";
+
+import { firstLevelMenu } from "../../helpers/helpers";
 
 interface CourseProps extends Record<string, unknown> {
   menu: MenuItem[];
-  firstCategory: number;
+  firstCategory: TopLevelCategory;
   page: TopPageModel;
   products: ProductModel[];
 }
-
-const firstCategory = 0;
 
 function Course({ menu, page, products }: CourseProps): JSX.Element {
   return <>{products && products.length}</>;
@@ -25,12 +26,20 @@ function Course({ menu, page, products }: CourseProps): JSX.Element {
 export default withLayout(Course);
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { data: menu } = await axios.post<MenuItem[]>(
-    "https://courses-top.ru/api/top-page/find",
-    { firstCategory }
-  );
+  let paths: string[] = [];
+
+  for (const m of firstLevelMenu) {
+    const { data: menu } = await axios.post<MenuItem[]>(
+      "https://courses-top.ru/api/top-page/find",
+      { firstCategory: m.id }
+    );
+    paths = paths.concat(
+      menu.flatMap((s) => s.pages.map((p) => `/${m.route}/${p.alias}`))
+    );
+  }
+
   return {
-    paths: menu.flatMap((m) => m.pages.map((p) => "/courses/" + p.alias)),
+    paths,
     fallback: true,
   };
 };
@@ -40,9 +49,12 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({
 }: GetStaticPropsContext<ParsedUrlQuery>) => {
   if (!params) return { notFound: true };
 
+  const firstCategoryItem = firstLevelMenu.find((m) => m.route === params.type);
+  if (!firstCategoryItem) return { notFound: true };
+
   const { data: menu } = await axios.post<MenuItem[]>(
     "https://courses-top.ru/api/top-page/find",
-    { firstCategory }
+    { firstCategory: firstCategoryItem.id }
   );
   const { data: page } = await axios.get<TopPageModel>(
     "https://courses-top.ru/api/top-page/byAlias/" + params.alias
@@ -54,11 +66,13 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({
       limit: 10,
     }
   );
+  if (!menu || menu.length === 0 || !page || !products)
+    return { notFound: true };
 
   return {
     props: {
       menu,
-      firstCategory,
+      firstCategory: firstCategoryItem.id,
       page,
       products,
     },
