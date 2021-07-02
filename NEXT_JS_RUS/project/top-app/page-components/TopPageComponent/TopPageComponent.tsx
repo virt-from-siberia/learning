@@ -5,6 +5,7 @@ import { TopPageComponentsProps } from "./TopPageComponent.props";
 import { Htag } from "../../components/Htag/Htag";
 import { Tag } from "../../components/Tag/Tag";
 import { HhData } from "../../components/HhData/HhData";
+import { Card } from "../../components/Card/Card";
 
 export const TopPageComponent = ({
   page,
@@ -17,18 +18,19 @@ export const TopPageComponent = ({
     },
     title: {
       display: "grid",
-      gridTinplateColumns: "auto 1fr auto",
+      gridTemplateColumns: "auto 1fr auto",
       alignItems: "baseline",
       justifyItems: "left",
       gap: "20px",
     },
     hhTitle: {
       display: "grid",
-      gridTinplateColumns: "auto 1fr",
+      gridTemplateColumns: "auto 1fr",
       alignItems: "baseline",
       justifyItems: "left",
       gap: "20px",
     },
+    count: {},
     hh: {},
     hhCount: {},
     hhStatTitle: {},
