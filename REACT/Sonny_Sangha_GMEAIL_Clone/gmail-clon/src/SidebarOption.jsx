@@ -3,7 +3,12 @@ import cn from 'classnames';
 
 import './SidebarOption.css';
 
-export function SidebarOption({ Icon, title, number, selected }) {
+export function SidebarOption({
+  Icon,
+  title,
+  number,
+  selected
+}) {
   return (
     <div
       className={cn('sidebarOption', {

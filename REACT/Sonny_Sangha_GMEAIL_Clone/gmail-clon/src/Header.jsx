@@ -17,7 +17,10 @@ export function Header() {
         <IconButton>
           <MenuIcon />
         </IconButton>
-        <img src="https://cdn.worldvectorlogo.com/logos/gmail-icon-3.svg" alt="" />
+        <img
+          src="https://cdn.worldvectorlogo.com/logos/gmail-icon-3.svg"
+          alt=""
+        />
       </div>
       <div className="header__middle">
         <SearchIcon />
