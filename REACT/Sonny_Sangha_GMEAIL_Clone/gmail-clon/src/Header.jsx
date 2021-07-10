@@ -4,8 +4,9 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import AppsIcon from '@material-ui/icons/Apps';
+import NotificationsIcon from '@material-ui/icons/Notifications';
 
-import { IconButton } from '@material-ui/core';
+import { IconButton, Avatar } from '@material-ui/core';
 
 import './Header.css';
 
@@ -27,6 +28,10 @@ export function Header() {
         <IconButton>
           <AppsIcon />
         </IconButton>
+        <IconButton>
+          <NotificationsIcon />
+        </IconButton>
+        <Avatar />
       </div>
     </div>
   );

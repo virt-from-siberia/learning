@@ -7,6 +7,7 @@ function App() {
     <div className="App">
       <Header />
       <h1> Lets build gmail</h1>
+      <Sidebar />
     </div>
   );
 }
