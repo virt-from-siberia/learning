@@ -1,5 +1,8 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
+import { selectOpenMail } from './features/mailSlice';
 
 import { IconButton } from '@material-ui/core';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
@@ -19,6 +22,7 @@ import './Mail.css';
 
 export function Mail() {
   const history = useHistory();
+  const selectedMail = useSelector(selectOpenMail);
 
   return (
     <div className="mail">
@@ -66,13 +70,13 @@ export function Mail() {
       </div>
       <div className="mail__body">
         <div className="mail__bodyHeader">
-          <h2>Subject</h2>
+          <h2>{selectedMail?.subject}</h2>
           <LabelImportantIcon className="mail__important" />
-          <p>Title</p>
-          <p className="mail__time">10pm</p>
+          <p>{selectedMail?.title}</p>
+          <p className="mail__time">selectedMail?.time</p>
         </div>
         <div className="mail__message">
-          <p>This is the message</p>
+          <p>{selectedMail?.description}</p>
         </div>
       </div>
     </div>

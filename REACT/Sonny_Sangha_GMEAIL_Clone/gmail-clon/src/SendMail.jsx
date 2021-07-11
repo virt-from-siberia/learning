@@ -1,6 +1,9 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
+
+import firebase from 'firebase';
+import { db } from './firebase';
 import { closeSendMessage } from './features/mailSlice';
 
 import CloseIcon from '@material-ui/icons/Close';
@@ -19,7 +22,14 @@ export const SendMail = () => {
   } = useForm();
 
   const onSubmit = (formData) => {
-    console.log(formData);
+    db.collection('emails').add({
+      to: formData.to,
+      subject: formData.subject,
+      message: formData.message,
+      timestamp:
+        firebase.firestore.FieldValue.serverTimestamp()
+    });
+    dispatch(closeSendMessage());
   };
 
   return (
