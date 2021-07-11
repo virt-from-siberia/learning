@@ -1,16 +1,28 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
+import { selectUser, logout } from './features/userSlice';
+import { auth } from './firebase';
+
+import { IconButton, Avatar } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import AppsIcon from '@material-ui/icons/Apps';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 
-import { IconButton, Avatar } from '@material-ui/core';
-
 import './Header.css';
 
 export function Header() {
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  const signOut = () => {
+    auth.signOut().then(() => {
+      dispatch(logout());
+    });
+  };
+
   return (
     <div className="header">
       <div className="header__left">
@@ -34,7 +46,11 @@ export function Header() {
         <IconButton>
           <NotificationsIcon />
         </IconButton>
-        <Avatar />
+        <Avatar
+          style={{ cursor: 'pointer' }}
+          src={user?.photoURL}
+          onClick={signOut}
+        />
       </div>
     </div>
   );
