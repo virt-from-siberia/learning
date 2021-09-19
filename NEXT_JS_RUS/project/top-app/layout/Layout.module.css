@@ -25,12 +25,16 @@
 
 @media (max-width: 768px) {
   .sidebar {
-    display: none;
+    display: none !important;
   }
   .header {
     display: block;
   }
   .wrapper {
-    grid-template-columns: minmax(320px, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header "
+      "body "
+      "footer";
   }
 }

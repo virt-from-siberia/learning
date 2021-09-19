@@ -6,6 +6,7 @@ import { Htag } from "../../components/Htag/Htag";
 import { Tag } from "../../components/Tag/Tag";
 import { HhData } from "../../components/HhData/HhData";
 import { Card } from "../../components/Card/Card";
+import { TopLevelCategory } from "../../interfaces/toppage.interface";
 
 export const TopPageComponent = ({
   page,
@@ -55,7 +56,12 @@ export const TopPageComponent = ({
           hh.ru
         </Tag>
       </div>
-      <HhData {...page.hh} />
+      {firstCategory === TopLevelCategory.Courses && page.hh && (
+        <HhData {...page.hh} />
+      )}
+      {page.advantages && page.advantages.length && (
+        <Htag tag="h2">Приемущества</Htag>
+      )}
     </div>
   );
 };
