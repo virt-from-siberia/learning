@@ -28,7 +28,25 @@ export class CarComponent implements OnInit {
       salon: 'black',
       wheels: 'crome',
     };
-    this.options = ['ABS', 'TC'];
+    this.options = ['ABS', 'TC', 'Autopilot'];
+  }
+  addOpt(value: string): boolean {
+    console.log('lol', value);
+    this.options.unshift(value);
+    return false;
+  }
+
+  selectCar(carName: string) {
+    if (carName === 'bmw') {
+      this.name = 'BMW';
+      this.speed = 235;
+      this.model = '7';
+      this.colors = {
+        car: 'black',
+        salon: 'black',
+        wheels: 'steel',
+      };
+    }
   }
 }
 
