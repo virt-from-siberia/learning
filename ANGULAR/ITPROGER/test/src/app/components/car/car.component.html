@@ -22,6 +22,61 @@
     </ul>
   </div>
 
+  <h5>Редоктирование обьекта</h5>
+  <div>
+    <button type="button" class="btn btn-danger" (click)="showEdit()">
+      Редактировать
+    </button>
+  </div>
+  <br />
+  <form *ngIf="isEditable">
+    <div class="form-group">
+      <input
+        type="text"
+        placeholder="модель"
+        class="form-control"
+        [(ngModel)]="name"
+        name="name"
+      />
+      <input
+        type="text"
+        placeholder="название машины"
+        class="form-control"
+        [(ngModel)]="model"
+        name="model"
+      />
+      <input
+        type="number"
+        placeholder="скорость"
+        class="form-control"
+        [(ngModel)]="speed"
+        name="speed"
+      />
+      <input
+        type="text"
+        placeholder="цвет авто"
+        class="form-control"
+        [(ngModel)]="colors.car"
+        name="car"
+      />
+      <input
+        type="text"
+        placeholder="цвет салона"
+        class="form-control"
+        [(ngModel)]="colors.salon"
+        name="salon"
+      />
+      <input
+        type="text"
+        placeholder="цвет колес"
+        class="form-control"
+        [(ngModel)]="colors.wheels"
+        name="wheels"
+      />
+    </div>
+    <br />
+  </form>
+
   <h5>Возможности автомобиля</h5>
   <form (submit)="addOpt(option.value)">
     <div class="form-group">
@@ -34,7 +89,7 @@
         #option
       />
       <br />
-      <button type="button" class="btn btn-outline-success">Добавить</button>
+      <button type="submit" class="btn btn-outline-success">Добавить</button>
     </div>
     <br />
   </form>
@@ -42,6 +97,9 @@
     <ul>
       <li *ngFor="let opt of options; let i = index">
         {{ i + 1 }} : {{ opt }}
+        <button class="btn btn-danger btn-sm" (click)="deleteOpt(opt)">
+          X
+        </button>
       </li>
     </ul>
   </div>

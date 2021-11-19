@@ -1,10 +1,8 @@
-a, b = 1, 2
-print('global:', a + b)
+def factorial(n):
+    if n == 1:
+        return 1
+    factorial_n_minus_1 = factorial(n=n - 1)
+    return n * factorial_n_minus_1
 
 
-def simple():
-    c, d = 3, 4
-    print('simple:', c + b)
-
-
-simple()
+print(factorial(9))

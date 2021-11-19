@@ -32,7 +32,7 @@ def simple_2():
     # print('simple_2:', c + d)
 
 simple()
-simple_2()
+mple_2()
 print('global:', c + d)
 
 # Операторы управления потоком не создают локального пространства имен

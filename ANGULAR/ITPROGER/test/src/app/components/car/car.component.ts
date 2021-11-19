@@ -16,6 +16,7 @@ export class CarComponent implements OnInit {
   };
   options: string[] = [''];
   test: any = '';
+  isEditable: boolean = false;
 
   constructor() {}
 
@@ -31,8 +32,16 @@ export class CarComponent implements OnInit {
     this.options = ['ABS', 'TC', 'Autopilot'];
   }
   addOpt(value: string): boolean {
-    console.log('lol', value);
+    if (value === '') return false;
     this.options.unshift(value);
+    return false;
+  }
+
+  deleteOpt(value: string): boolean {
+    console.log('delete', value);
+    for (let i = 0; i < this.options.length; i++) {
+      if (this.options[i] === value) this.options.splice(i, 1);
+    }
     return false;
   }
 
@@ -47,6 +56,10 @@ export class CarComponent implements OnInit {
         wheels: 'steel',
       };
     }
+  }
+  showEdit(): boolean {
+    this.isEditable = !this.isEditable
+    return false;
   }
 }
 
