@@ -4,11 +4,6 @@
   data-color="purple"
   data-image="../assets/img/sidebar-1.jpg"
 >
-  <!--
-      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
-      Tip 2: you can also add an image using data-image tag
-  -->
   <div class="logo">
     <a class="simple-text logo-normal" href="http://www.creative-tim.com">
       Creative Tim
@@ -17,9 +12,10 @@
   <div class="sidebar-wrapper">
     <ul class="nav">
       <li
-        class="nav-item"
+        class="nav-item pointer"
         *ngFor="let category of categories"
         (click)="showTasksByCategory(category)"
+        [class.active]="category === selectedCategory"
       >
         <a class="nav-link">
           <p>{{ category.title }}</p>
