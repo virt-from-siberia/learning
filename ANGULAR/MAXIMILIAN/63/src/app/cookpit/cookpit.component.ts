@@ -1,4 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+
+interface IServerCreated {
+  serverName: string;
+  serverContent: string;
+}
 
 @Component({
   selector: "app-cookpit",
@@ -6,6 +11,9 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./cookpit.component.css"],
 })
 export class CookpitComponent implements OnInit {
+  @Output() serverCreated = new EventEmitter<IServerCreated>();
+  @Output("bpCreated") blueprintCreated = new EventEmitter<IServerCreated>();
+
   newServerName = "";
   newServerContent = "";
 
@@ -14,18 +22,16 @@ export class CookpitComponent implements OnInit {
   ngOnInit(): void {}
 
   onAddServer() {
-    this.serverElements.push({
-      type: "server",
-      name: this.newServerName,
-      content: this.newServerContent,
+    this.serverCreated.emit({
+      serverName: this.newServerName,
+      serverContent: this.newServerContent,
     });
   }
 
   onAddBlueprint() {
-    this.serverElements.push({
-      type: "blueprint",
-      name: this.newServerName,
-      content: this.newServerContent,
+    this.blueprintCreated.emit({
+      serverName: this.newServerName,
+      serverContent: this.newServerContent,
     });
   }
 }
