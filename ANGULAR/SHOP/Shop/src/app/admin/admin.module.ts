@@ -9,6 +9,14 @@ import { EditPageComponent } from './edit-page/edit-page.component';
 import { OrdersPageComponent } from './orders-page/orders-page.component';
 
 @NgModule({
+  declarations: [
+    AdminLayoutComponent,
+    LoginPageComponent,
+    AddPageComponent,
+    DashboardComponent,
+    EditPageComponent,
+    OrdersPageComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild([
@@ -27,13 +35,5 @@ import { OrdersPageComponent } from './orders-page/orders-page.component';
     ]),
   ],
   exports: [RouterModule],
-  declarations: [
-    AdminLayoutComponent,
-    LoginPageComponent,
-    AddPageComponent,
-    DashboardComponent,
-    EditPageComponent,
-    OrdersPageComponent,
-  ],
 })
 export class AdminModule {}
