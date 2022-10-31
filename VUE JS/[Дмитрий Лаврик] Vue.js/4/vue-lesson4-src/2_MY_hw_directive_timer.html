@@ -1,0 +1,51 @@
+<body>
+	<div class="sample">
+		<div v-timer:1000.5="onTimer">1</div>
+		<div v-timer:1000.5.run="onTimer">2</div>
+		<div v-timer:1000="onTimer">3</div>
+	</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	Vue.directive('timer', {
+		bind(el, options) {
+			let timer;
+			let interval = options.arg;
+			let max = false;
+			let done = 0;
+
+			for (let name in options.modifiers) {
+				if (!isNaN(+name)) {
+					max = parseInt(name);
+				}
+			}
+
+
+			let callback = () => {
+
+				done++;
+				options.value(el)
+
+				timer = setTimeout(() => {
+				}, interval);
+			}
+
+
+			timer = setTimeout(() => {
+				console.log('callback');
+				callback();
+			}, interval);
+		}
+	});
+
+	new Vue({
+		el: '.sample',
+		methods: {
+			onTimer(el) {
+				let fontSize = getComputedStyle(el)['fontSize'];
+				el.style.fontSize = (fontSize) + 10 + 'px';
+			}
+		}
+	});
+
+</script>

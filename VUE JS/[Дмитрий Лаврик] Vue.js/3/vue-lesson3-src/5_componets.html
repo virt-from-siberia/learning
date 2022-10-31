@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" href="css//bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sample">
+			<app-some v-for="(elem, index) in values" :key="index"
+					  :min="elem.min"
+					  :max="elem.max"
+					  @plusplus="onPlusPlus(index)"
+					  >
+			</app-some>
+        </div>
+    </div>
+	<script>
+		Vue.component('app-some', {
+			props: ['min', 'max'],
+			template: `
+				<div>
+					<h2>{{ number }}</h2>
+					<button class="btn btn-primary" @click="onClick">+</button>
+					<hr>
+				</div>
+			`,
+			data(){
+				return {
+					/* number: Math.floor(Math.random() * (this.max - this.min)) + this.min */
+				}
+			},
+			computed: {
+				number(){
+					return Math.floor(Math.random() * (this.max - this.min)) + this.min;
+				}
+			},
+			methods: {
+				onClick(e){
+					this.$emit('plusplus');
+				}
+			}
+		});
+
+		new Vue({
+			el: '.sample',
+			data: {
+				values: [
+					{
+						min: 1,
+						max: 5
+					},
+					{
+						min: 5,
+						max: 10
+					},
+					{
+						min: 10,
+						max: 15
+					}
+				]
+			},
+			methods: {
+				onPlusPlus(index){
+					this.values[index].min += 5;
+					this.values[index].max += 5;
+				}
+			}
+		});
+
+	</script>
+</body>
+</html>

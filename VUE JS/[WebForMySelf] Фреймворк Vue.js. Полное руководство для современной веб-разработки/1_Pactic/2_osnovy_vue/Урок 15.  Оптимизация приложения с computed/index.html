@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue JS</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <h2> Counter: {{counter}} \ {{counterNext}}</h2>
+        <h3> Resaul: {{result()}}</h3>
+        <h3> ComputedResault: {{computedResaul}}</h3>
+
+        <button v-on:click="add">Add</button>
+        <button v-on:click="sub">Sub</button>
+        <button v-on:click="computedResaul++">Add counter 2</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                counter: 0,
+                counterNext: 0,
+                condition: 'Less than 3'
+            },
+            methods: {
+                add() {
+                    return this.counter++;
+
+                },
+                sub() {
+                    return this.counter--;
+
+                },
+                result() {
+                    console.log('Resault was called');
+                    return this.condition = this.counter > 3 ? 'More hen 3' : 'Less than 3'
+                }
+            },
+            computed: {
+                computedResaul() {
+                    console.log('computedResaul was called');
+                    return this.counter > 3 ? 'More hen 3' : 'Less than 3'
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sample">
+            <hr>
+            <button class="btn btn-success" v-on:click="addNumber">Add number</button>
+            <button class="btn btn-primary" v-on:click="sortNumber">Sort number</button>
+            <ul>
+                <li v-for="(number, index) in numbers" v-on:mouseenter="onMouseEnter($event, index)" v-on:mouseleave="onMouseLeave($event, index)">
+                    {{number}}
+                </li>
+            </ul>
+            <hr>
+            <table class="table table-bordered">
+                <tr v-for="(value, key) in info" :key="key">
+                    <td>{{key}}</td>
+                    <td>{{value}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        let sample = new Vue({
+            el: '.sample',
+            data: {
+                numbers: [100, 200, 300],
+                info: {
+                    name: 'Dmirty',
+                    email: 'admin@ru',
+                    age: 23,
+                    location: {
+                        city: 'chita',
+                        adress: '1mkr'
+                    }
+                }
+            },
+            methods: {
+                addNumber() {
+                    this.numbers.push(Math.floor(Math.random() * 10));
+                },
+                sortNumber() {
+                    this.numbers.sort((a, b) => {
+                        return a > b ? 1 : -1;
+                    });
+                },
+                onMouseEnter(evt, index) {
+                    evt.target.style.backgroundColor = 'red';
+                    evt.target.style.color = 'white';
+                    console.log(index);
+                },
+                onMouseLeave(evt, index) {
+                    evt.target.style.backgroundColor = 'white'
+                    evt.target.style.color = 'black';
+                    console.log(index);
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>

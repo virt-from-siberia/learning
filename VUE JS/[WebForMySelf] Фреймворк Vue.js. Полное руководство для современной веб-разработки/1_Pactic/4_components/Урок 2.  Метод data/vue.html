@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+        <my-counter v-for="components in 5"></my-counter>
+
+
+        <button v-on:click="sum">sum</button>
+        <h2>{{sumOfCounters}}</h2>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+
+        var dataObject = {
+            counter: 0
+        }
+
+        Vue.component('my-counter', {
+            template: `
+                        <div class="" style="border: 1px solid green; padding:10px">
+                        <h2>counter : {{counter}}</h2>
+                        <button v-on:click="counter++">counter ++ </button>
+                        <input type="text" v-model="counter">
+                        </div>
+                    `,
+            data() {
+                return {
+                    counter: 0
+                }
+            },
+            methods: {
+
+            }
+
+        });
+        new Vue({
+            el: '#app',
+            data: {
+                sumOfCounters: 0
+            },
+            methods: {
+                sum() {
+                    this.sumOfCounters = this.counter + this.counter2;
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>

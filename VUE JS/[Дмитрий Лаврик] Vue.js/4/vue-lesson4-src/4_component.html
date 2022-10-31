@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" href="css//bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/vue.js"></script>
+</head>
+<body>
+	<div class="sample container">
+		<button class="btn btn-primary" @click="ul = !ul">Toggle</button>
+		<hr>
+		<app-ul :items="list" v-if="ul"></app-ul>
+		<app-ol :items="list" :start="5" v-else></app-ol>
+		<component :is="listType" :items="list"></component>
+	</div>
+<script src="js/vue.js"></script>
+<script>
+	Vue.component('appUl', {
+		props: {
+			items: null
+		},
+		template: `
+			<ul>
+				<li v-for="item in items">
+					{{ item }}
+				</li>
+			</ul>
+		`,
+		created(){
+			console.log('ul created');
+		}
+	});
+
+	Vue.component('appOl', {
+		props: {
+			items: null,
+			start: Number
+		},
+		template: `
+			<ol :start="start">
+				<li v-for="item in items">
+					{{ item }}
+				</li>
+			</ol>
+		`,
+		created(){
+			console.log('ol created');
+		}
+	});
+
+	new Vue({
+		el: '.sample',
+		data: {
+			list: [
+				'Some',
+				'Items',
+				'For',
+				'List'
+			],
+			ul: true
+		},
+		computed: {
+			listType(){
+				return this.ul ? 'appUl' : 'appOl';
+			}
+		}
+	});
+
+</script>
+</body>
+</html>

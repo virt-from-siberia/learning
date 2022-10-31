@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sample">
+            <input type="text" v-model="firstName">
+            <hr>
+            <input type="text" v-model="lastName">
+            <hr>
+            <h2>Hello, {{ fullName }}</h2>
+            <hr>
+            <button class="btn btn-success" 
+                    @click="showText = !showText"
+                    >
+                ToggleText
+            </button>
+            <hr>
+            <div v-show="showText">Some text</div>
+        </div>
+    </div>
+    <script>
+        let sample = new Vue({
+            el: '.sample',
+            data: {
+                firstName: '',
+                lastName: '',
+                showText: false
+            },
+            computed: {
+                fullName(){
+                    console.log('render fullname');
+                    return this.firstName + ' ' + this.lastName;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

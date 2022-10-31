@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sample">
+            <input type="text" data-v-model="firstName">
+            <hr>
+            <input type="text" data-v-model="lastName">
+            <hr>
+            <input type="text" data-v-model.lazy="promo">
+            <hr>
+            <h2>Hello, {{ fullName }}</h2>
+            <hr>
+            <button class="btn btn-success" 
+                    data-v-on_click="showText = !showText"
+                    >
+                ToggleText
+            </button>
+            <hr>
+            <h3 data-v-show="showText">Your sale is {{ sale }}%</h3>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue-w3c-valid/dist/simple.js"></script>
+    <script>
+        function getSale(code, callback){
+            let codes = {
+                newYear: 10,
+                some: 20
+            };
+
+            let sale = (codes[code] !== undefined) ? codes[code] : 0;
+
+            setTimeout(() => {
+                callback(sale);
+            }, 500);
+        }
+
+        new VueW3CValid({
+            el: '.sample'
+        });
+
+        let sample = new Vue({
+            el: '.sample',
+            data: {
+                firstName: '',
+                lastName: '',
+                promo: '',
+                showText: true,
+                sale: 0
+            },
+            computed: {
+                fullName(){
+                    console.log('render fullname');
+                    return this.firstName + ' ' + this.lastName;
+                }
+            },
+            watch: {
+                promo(){
+                    getSale(this.promo, (sale) => {
+                        this.sale = sale;
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>

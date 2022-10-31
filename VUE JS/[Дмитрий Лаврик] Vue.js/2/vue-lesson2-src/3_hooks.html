@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" href="css//bootstrap.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div class="wrapper">
+<div class="sample">
+    <div class="form-group">
+        <label>Phone</label>
+        <input type="text" class="form-control" v-model="phone">
+    </div>
+    {{ phone }}
+</div>
+</div>
+<script>
+    new Vue({
+        el: '.sample',
+        data: {
+            phone: ''
+        },
+        beforeCreate(){
+            console.log('bc');
+            console.log(this.$el);
+        },
+        created(){
+            console.log('c');
+            console.log(this.$el);
+        },
+        beforeMount(){
+            console.log('bm');
+            console.log(this.$el.innerHTML);
+        },
+        mounted(){
+            console.log('m');
+            console.log(this.$el.innerHTML);
+        },
+        beforeUpdate(){
+            /* пример не настоящий! */
+
+            let pattern = /^[0-9]*$/;
+            let pReplace = /[^0-9]/g;
+
+            if(!pattern.test(this.phone)){
+                this.phone = this.phone.replace(pReplace, '');
+            }
+        },
+        updated(){
+            console.log('u');
+        }
+    });
+
+</script>
+</body>
+</html>
