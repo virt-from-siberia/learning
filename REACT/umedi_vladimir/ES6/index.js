@@ -1,1 +1,0 @@
-const APP = 1;
