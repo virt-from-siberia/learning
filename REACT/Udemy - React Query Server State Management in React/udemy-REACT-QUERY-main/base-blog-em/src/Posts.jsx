@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useQuery } from "react-query";
+import { useEffect, useState } from "react";
+import { useQuery, useQueryClient } from "react-query";
 
 import { PostDetail } from "./PostDetail";
 const maxPostPage = 10;
@@ -15,30 +15,43 @@ export function Posts() {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedPost, setSelectedPost] = useState(null);
 
-  const { data, isError, error, isLoading } = useQuery(
-    ["posts", currentPage],
-    () => fetchPosts(currentPage),
-    {
-      staleTime: 2000,
-    }
-  );
+  const queryClient = useQueryClient();
 
-  if (isLoading) return <h3>Loading...</h3>;
+  useEffect(() => {
+    if (currentPage < maxPostPage) {
+      const nextPage = currentPage + 1;
+      queryClient.prefetchQuery(["posts", nextPage], () =>
+        fetchPosts(nextPage)
+      );
+    }
+  }, [currentPage, queryClient]);
+
+  const {
+    data = [],
+    isError,
+    error,
+    isLoading,
+    isFetching,
+  } = useQuery(["posts", currentPage], () => fetchPosts(currentPage), {
+    staleTime: 2000,
+    keepPreviousData: true,
+  });
+
+  if (isLoading) return <h3>isLoading in progress...</h3>;
   if (isError) return <h3>Error! {error}</h3>;
 
   return (
     <>
       <ul>
-        {data &&
-          data.map((post) => (
-            <li
-              key={post.id}
-              className="post-title"
-              onClick={() => setSelectedPost(post)}
-            >
-              {post.title}
-            </li>
-          ))}
+        {data.map((post) => (
+          <li
+            key={post.id}
+            className="post-title"
+            onClick={() => setSelectedPost(post)}
+          >
+            {post.title}
+          </li>
+        ))}
       </ul>
       <div className="pages">
         <button
