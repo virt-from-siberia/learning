@@ -1,1 +1,0 @@
-BLOCK 5 Добавление CSRF-защитыe BEGIN
